@@ -1,2 +1,2 @@
 ## my dotfiles
-`./setup.sh`
+`cd ~/dotfiles && ./setup.sh && exec $SHELL -l`
