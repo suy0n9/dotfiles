@@ -1,8 +1,9 @@
 #!/bin/bash
 
-DOT_FILES=(.zshrc)
-
-for file in ${DOT_FILES[@]}
+for f in .??*
 do
-	ln -s $HOME/dotfiles/$files $HOME/$file
+    [[ "$f" == ".git" ]] && continue
+    [[ "$f" == ".DS_Store" ]] && continue
+
+	ln -s ~/dotfiles/$f ~/$f
 done
