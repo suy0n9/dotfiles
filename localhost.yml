@@ -1,0 +1,85 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  vars:
+    homebrew_taps:
+      - homebrew/binary
+      - homebrew/dupes
+      - caskroom/cask
+    homebrew_packages:
+      - { name: readline }
+      - { name: openssl }
+      - { name: openssl, state: linked, install_options: force }
+      - { name: python }
+      - { name: ansible }
+      - { name: git }
+      - { name: zsh, install_options: disable-etcdir }
+      - { name: wget }
+      - { name: curl }
+      - { name: tree }
+      - { name: go }
+      - { name: mysql }
+      - { name: sqlite }
+      - { name: redis }
+    homebrew_cask_packages:
+      - { name: iterm2 }
+      - { name: firefox }
+      - { name: google-chrome }
+      - { name: google-japanese-ime }
+      - { name: adobe-reader }
+      - { name: java }
+      - { name: skype }
+      - { name: slack }
+      - { name: sourcetree }
+      - { name: flux }
+      - { name: skitch }
+      - { name: boostnote }
+      - { name: intellij-idea }
+      - { name: visual-studio-code }
+      - { name: virtualbox }
+      - { name: sequel-pro }
+
+  tasks:
+    - name: add homebrew tap repository
+      homebrew_tap: tap={{ item }} state=present
+      with_items: "{{ homebrew_taps }}"
+
+    # update homebrew
+    - name: brew update
+      homebrew: update_homebrew=yes
+
+    # homebrew
+    - name: install homebrew package
+      homebrew: >
+        name={{ item.name }}
+        state={{ item.state | default('latest') }}
+        install_options={{
+          item.install_options | default() | join(',')
+          if item.install_options is not string
+          else item.install_options
+        }}
+      with_items: "{{ homebrew_packages }}"
+      register: brew_result
+
+    # homebrew-cask
+    - name: install homebrew-cask
+      homebrew: name=cask state=latest
+    - name: install homebrew-cask package
+      homebrew_cask: 
+        name={{ item.name }}
+        state={{ item.state|default('installed') }}
+        install_options='appdir=/Applications'
+      with_items: "{{ homebrew_cask_packages }}"
+      ignore_errors: True
+      register: cask_result
+
+    # oh-my-zsh
+    - name: install oh-my-zsh
+      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+      args:
+        creates: ~/.oh-my-zsh/
+
+  handlers:
+      - name: run fc-cache
+        shell: fc-cache -vf
