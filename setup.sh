@@ -11,12 +11,12 @@ case $ANSWER in
   * ) echo "generate keypair skip" ;;
 esac
 
-echo 'clone dotfiles?[Y/n]'
+echo 'clone mac_setup?[Y/n]'
 read ANSWER
 case $ANSWER in
   "" | "Y" | "y" )
-    git clone https://github.com/suy0ng/dotfiles.git ;;
-  * ) echo "clone dotfile skip" ;;
+    git clone https://github.com/suy0ng/mac_setup.git ;;
+  * ) echo "clone mac_setup skip" ;;
 esac
 
 echo 'install homebrew?[Y/n]'
