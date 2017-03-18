@@ -34,7 +34,7 @@ case $ANSWER in
     brew install python
     brew install ansible
     rehash ;;
-  * ) echo "************ install ansible skip" ;;
+  * ) echo "install ansible skip" ;;
 esac
 
 echo '************ run ansible?[Y/n]'

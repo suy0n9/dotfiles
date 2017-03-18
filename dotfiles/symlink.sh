@@ -20,7 +20,7 @@ do
     fi
 
     # set symlink
-    filePath="~/mac_setup/dotfiles/${f}"
+    filePath="$HOME/mac_setup/dotfiles/${f}"
     ln -s $filePath ~/$f
     echo "create symbolic link [ $f -> $filePath ]"
 done
