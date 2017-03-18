@@ -18,7 +18,6 @@
       - { name: wget }
       - { name: curl }
       - { name: tree }
-      - { name: go }
       - { name: mysql }
       - { name: sqlite }
       - { name: redis }
@@ -66,7 +65,7 @@
     - name: install homebrew-cask
       homebrew: name=cask state=latest
     - name: install homebrew-cask package
-      homebrew_cask: 
+      homebrew_cask:
         name={{ item.name }}
         state={{ item.state|default('installed') }}
         install_options='appdir=/Applications'
