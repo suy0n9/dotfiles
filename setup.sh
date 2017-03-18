@@ -3,12 +3,12 @@
 echo 'Start setup'
 cd ~
 
-echo '************ generate keypair?[Y/n]'
+echo '************ generate a new SSH key?[Y/n]'
 read ANSWER
 case $ANSWER in
   "" | "Y" | "y" )
-    ssh-keygen ;;
-  * ) echo "generate keypair skip" ;;
+    ssh-keygen -t rsa -b 4096 ;;
+  * ) echo "skip" ;;
 esac
 
 echo '************ clone mac_setup?[Y/n]'
@@ -22,8 +22,8 @@ fi
 
 case $ANSWER in
   "" | "Y" | "y" )
-    eval $command;;
-  * ) echo "clone mac_setup skip" ;;
+    eval $command ;;
+  * ) echo "skip" ;;
 esac
 
 echo '************ install homebrew?[Y/n]'
@@ -31,7 +31,7 @@ read ANSWER
 case $ANSWER in
   "" | "Y" | "y" )
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ;;
-  * ) echo "install homebrew skip" ;;
+  * ) echo "skip" ;;
 esac
 
 echo '************ install ansible?[Y/n]'
@@ -39,9 +39,8 @@ read ANSWER
 case $ANSWER in
   "" | "Y" | "y" )
     brew install python
-    brew install ansible
-    rehash ;;
-  * ) echo "install ansible skip" ;;
+    brew install ansible ;;
+  * ) echo "skip" ;;
 esac
 
 echo '************ run ansible?[Y/n]'
@@ -50,7 +49,7 @@ case $ANSWER in
   "" | "Y" | "y" )
     cd ~/mac_setup
     ansible-playbook -i hosts -vv localhost.yml ;;
-  * ) echo "run ansible skip" ;;
+  * ) echo "skip" ;;
 esac
 
 echo '************ setup dotfiles?[Y/n]'
@@ -59,7 +58,7 @@ case $ANSWER in
   "" | "Y" | "y" )
     cd ~/mac_setup/dotfiles
     ./symlink.sh ;;
-  * ) echo "setup dotfiles skip" ;;
+  * ) echo "skip" ;;
 esac
 
-echo 'new Mac setup finished!! Please run "chsh -s /bin/zsh" & "exec $SHELL -l"'
+echo 'Mac setup finished!! Please run "chsh -s /bin/zsh" & "exec $SHELL -l"'
