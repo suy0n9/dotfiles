@@ -1,2 +1,2 @@
 ## my dotfiles
-`cd ~/dotfiles && ./setup.sh && exec $SHELL -l`
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/suy0ng/mac_setup/master/setup.sh)"`
