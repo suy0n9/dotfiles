@@ -13,14 +13,15 @@ do
         echo "$f is already exists."
 
         TIMESTAMP=`date +%Y%m%d%H%M`
-        backupName="${f}_backup_${TIMESTAMP}"
+        backupName=${f}_backup_${TIMESTAMP}
 
         mv ~/$f ~/$backupName
         echo "Archived dotfiles ~/$f -> ~/$backupName"
     fi
 
     # set symlink
-    filePath="$HOME/mac_setup/dotfiles/${f}"
+    filePath=$HOME/mac_setup/dotfiles/${f}
     ln -s $filePath ~/$f
     echo "create symbolic link [ $f -> $filePath ]"
+    source ~/$f
 done

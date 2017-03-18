@@ -13,9 +13,16 @@ esac
 
 echo '************ clone mac_setup?[Y/n]'
 read ANSWER
+
+if [ -e ~/mac_setup ]; then
+  command="cd ~/mac_setup && git pull origin master"
+else
+  command="git clone https://github.com/suy0ng/mac_setup.git"
+fi
+
 case $ANSWER in
   "" | "Y" | "y" )
-    git clone https://github.com/suy0ng/mac_setup.git ;;
+    eval $command;;
   * ) echo "clone mac_setup skip" ;;
 esac
 
