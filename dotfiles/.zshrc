@@ -110,22 +110,23 @@ setopt hist_ignore_space
 # ヒストリに保存するときに余分なスペースを削除する
 setopt hist_reduce_blanks
 
+## 重複パスを登録しない
+typeset -U path cdpath fpath manpath
+
 # zsh-completionsの設定
 fpath=(/path/to/homebrew/share/zsh-completions $fpath)
-
 autoload -U compinit
 compinit -u
 
 # anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - zsh)"
-
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+if [ -d $HOME/.anyenv ] ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+    for D in `ls $HOME/.anyenv/envs`
+    do
+        export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+    done
+ fi
 
 #gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-gvm use go1.7.1
-
-#nodebrew
-export PATH=$PATH:$HOME/.nodebrew/current/bin
