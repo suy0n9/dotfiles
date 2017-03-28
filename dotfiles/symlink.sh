@@ -16,12 +16,11 @@ do
         backupName=${f}_backup_${TIMESTAMP}
 
         mv ~/$f ~/$backupName
-        echo "Archived dotfiles ~/$f -> ~/$backupName"
+        echo "Archived dotfile ~/$f -> ~/$backupName"
     fi
 
     # set symlink
     filePath=$HOME/mac_setup/dotfiles/${f}
     ln -s $filePath ~/$f
     echo "create symbolic link [ $f -> $filePath ]"
-    source ~/$f
 done
