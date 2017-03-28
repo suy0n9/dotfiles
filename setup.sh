@@ -61,4 +61,4 @@ case $ANSWER in
   * ) echo "skip" ;;
 esac
 
-echo 'Mac setup finished!! Please run "chsh -s /bin/zsh" & "exec $SHELL -l"'
+echo 'Mac setup finished!!'
