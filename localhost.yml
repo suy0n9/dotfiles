@@ -16,6 +16,7 @@
       - { name: git }
       - { name: zsh, install_options: disable-etcdir }
       - { name: wget }
+      - { name: w3m }
       - { name: curl }
       - { name: tree }
       - { name: mysql }
@@ -29,15 +30,14 @@
       - { name: adobe-reader }
       - { name: java }
       - { name: skype }
+      - { name: kindle }
       - { name: slack }
-      - { name: sourcetree }
-      - { name: flux }
       - { name: skitch }
       - { name: boostnote }
-      - { name: intellij-idea }
       - { name: visual-studio-code }
       - { name: virtualbox }
       - { name: sequel-pro }
+      - { name: docker }
 
   tasks:
     - name: add homebrew tap repository
