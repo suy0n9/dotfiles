@@ -128,5 +128,10 @@ if [ -d $HOME/.anyenv ] ; then
     done
  fi
 
-#gvm
+# gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# pyenv
+PYENV_ROOT=$HOME/.pyenv
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
