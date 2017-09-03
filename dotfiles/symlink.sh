@@ -4,6 +4,7 @@ for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
+    [[ "$f" == ".swp" ]] && continue
 
     # check symlink & unlink
     [[ -L ~/$f ]] && unlink ~/$f

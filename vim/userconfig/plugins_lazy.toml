@@ -1,0 +1,27 @@
+[[plugins]]
+repo   = 'Shougo/unite.vim'
+
+# unite.vim を読み込んだら一緒に読み込む
+[[plugins]]
+repo      = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+# python
+[[plugins]]
+repo = "davidhalter/jedi-vim"
+on_ft = ['python']
+hook_add = '''
+    autocmd FileType python setlocal completeopt-=preview
+    let g:jedi#popup_select_first = 0
+    let g:jedi#popup_on_dot = 0
+'''
+
+# go
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+
+# toml
+[[plugins]] # Toml
+repo  = 'cespare/vim-toml'
+on_ft = 'toml'
