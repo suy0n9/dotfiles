@@ -22,6 +22,19 @@ repo = 'fatih/vim-go'
 on_ft = ['go']
 
 # toml
-[[plugins]] # Toml
+[[plugins]]
 repo  = 'cespare/vim-toml'
 on_ft = 'toml'
+
+# yaml
+[[plugins]]
+repo  = 'stephpy/vim-yaml'
+on_ft = 'yaml'
+
+# Markdown
+[[plugins]]
+repo  = 'plasticboy/vim-markdown'
+on_ft = ['markdown', 'mkd']
+hook_add = '''
+    let g:vim_markdown_folding_disabled = 1
+'''
