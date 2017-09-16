@@ -1,21 +1,12 @@
 #!/bin/sh
 
-DIR=rc
+DIR=$HOME/.vim/rc
+FILEPATH=$HOME/mac_setup/vim/rc
 
 # check rc dir
-if [ -e ~/.vim/$DIR ]; then
+if [ -e $DIR ]; then
     echo "$DIR is already exists."
 else
-    mkdir ~/.vim/$DIR
-    echo "create ~/.vim/$DIR"
+    ln -s $FILEPATH $DIR
+    echo "create $DIR"
 fi
-
-
-# set dein toml
-for F in rc/*toml
-do
-    FILEPATH=$HOME/mac_setup/$F
-
-    ln -s $FILEPATH $HOME/.vim/$F
-    echo "create symlink [ $F -> $FILEPATH ]"
-done
