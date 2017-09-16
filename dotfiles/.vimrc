@@ -38,9 +38,9 @@ endif
 if dein#load_state(s:dein_path)
   call dein#begin(s:dein_path)
 
-  let g:config_dir  = expand('~/.vim/userconfig')
-  let s:toml        = g:config_dir . '/plugins.toml'
-  let s:lazy_toml   = g:config_dir . '/plugins_lazy.toml'
+  let g:config_dir  = expand('~/.vim/rc')
+  let s:toml        = g:config_dir . '/dein.toml'
+  let s:lazy_toml   = g:config_dir . '/dein_lazy.toml'
 
   " TOML 読み込み
   call dein#load_toml(s:toml,      {'lazy': 0})
