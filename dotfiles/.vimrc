@@ -3,6 +3,7 @@ set title
 set ambiwidth=double
 set tabstop=4
 set expandtab
+set smarttab
 set shiftwidth=4
 set smartindent
 set list
