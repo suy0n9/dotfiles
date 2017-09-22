@@ -11,6 +11,22 @@ case $ANSWER in
   * ) echo "skip" ;;
 esac
 
+echo '************ install homebrew?[Y/n]'
+read ANSWER
+case $ANSWER in
+  "" | "Y" | "y" )
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ;;
+  * ) echo "skip" ;;
+esac
+
+echo '************ install Git?[Y/n]'
+read ANSWER
+case $ANSWER in
+  "" | "Y" | "y" )
+    brew install git ;;
+  * ) echo "skip" ;;
+esac
+
 echo '************ clone mac_setup?[Y/n]'
 read ANSWER
 
@@ -26,13 +42,6 @@ case $ANSWER in
   * ) echo "skip" ;;
 esac
 
-echo '************ install homebrew?[Y/n]'
-read ANSWER
-case $ANSWER in
-  "" | "Y" | "y" )
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ;;
-  * ) echo "skip" ;;
-esac
 
 echo '************ install ansible?[Y/n]'
 read ANSWER
