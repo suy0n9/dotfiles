@@ -6,6 +6,9 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+[[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
