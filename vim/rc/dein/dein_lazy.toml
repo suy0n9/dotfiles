@@ -6,7 +6,6 @@ repo   = 'Shougo/unite.vim'
 repo      = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
-
 # go
 [[plugins]]
 repo = 'fatih/vim-go'
@@ -26,6 +25,12 @@ on_ft = 'yaml'
 [[plugins]]
 repo  = 'plasticboy/vim-markdown'
 on_ft = ['markdown', 'mkd']
-hook_add = '''
-    let g:vim_markdown_folding_disabled = 1
-'''
+hook_add = 'source ~/.vim/rc/plugins/markdown.rc.vim'
+
+[[plugins]]
+repo  = 'kannokanno/previm'
+on_ft = ['markdown', 'mkd']
+
+[[plugins]]
+repo  = 'tyru/open-browser.vim'
+on_ft = ['markdown', 'mkd']
