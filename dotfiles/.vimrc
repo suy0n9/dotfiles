@@ -32,7 +32,7 @@ set smartcase "検索文字列に大文字が含まれている場合は区別�
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
-colorscheme molokai
+colorscheme Tomorrow-Night-Bright
 syntax enable
 set number
 set title
