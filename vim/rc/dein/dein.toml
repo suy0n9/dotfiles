@@ -13,6 +13,7 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+hook_add = 'source ~/.vim/rc/plugins/indentline.rc.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
