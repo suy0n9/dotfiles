@@ -24,6 +24,8 @@
       - { name: mysql }
       - { name: sqlite }
       - { name: redis }
+      - { name: ghq }
+      - { name: peco }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: firefox }
