@@ -15,6 +15,7 @@
       - { name: pyenv }
       - { name: ansible }
       - { name: git }
+      - { name: mercurial }
       - { name: zsh, install_options: disable-etcdir }
       - { name: wget }
       - { name: w3m }
