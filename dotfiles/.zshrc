@@ -136,11 +136,18 @@ PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
 
+# export
+export GOPATH=$HOME/dev
+export PATH=$PATH:$GOPATH/bin
+
+# alias
+alias gore='gore -autoimport'
+
 # peco src
 function peco-src() {
-    local src=$(ghq list --full-path | peco --query "$LBUFFER")
+    local src=$(ghq list | peco --query "$LBUFFER")
     if [ -n "$src" ]; then
-        BUFFER="cd $src"
+        BUFFER="cd ${GOPATH}/src/$src"
         zle accept-line
     fi
     zle -R -c
