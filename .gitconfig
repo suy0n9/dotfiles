@@ -1,0 +1,22 @@
+[user]
+    name = suy0n9
+    email = suy01v9@gmail.com
+[core]
+    excludesfile = /Users/suyong/.gitignore_global
+[color]
+    ui = true
+[alias]
+    co = checkout
+    st = status
+    br = branch
+    cm = commit
+[commit]
+    template = /Users/suyong/.stCommitMsg
+[ghq]
+    root = /Users/suyong/dev/src
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
+[interactive]
+    diffFilter = diff-highlight
