@@ -1,6 +1,8 @@
 [user]
     name = suy0n9
     email = suy01v9@gmail.com
+[includeIf "gitdir:~/dev/src/work/"]
+    path = ~/.gitconfig-work
 [core]
     excludesfile = /Users/suyong/.gitignore_global
 [color]
