@@ -82,7 +82,11 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias gitconfig="vim ~/.gitconfig"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gore='gore -autoimport'
+alias src='$(ghq root)'
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -140,19 +144,6 @@ eval "$(pyenv init -)"
 export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
 
-# alias
-alias gore='gore -autoimport'
-
-# load file if exists
-function load_if_exists () {
-    if [ -f $1 ]; then
-        source $1
-    fi
-}
-
-# work setting
-load_if_exists "$HOME/work-config.zsh"
-
 # peco src
 function peco-src() {
     local src=$(ghq list | peco --query "$LBUFFER")
@@ -173,3 +164,8 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+# work config
+if [[ -f ~/work.zsh ]]; then
+    source ~/work.zsh
+fi
