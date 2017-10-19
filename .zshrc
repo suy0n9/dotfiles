@@ -143,6 +143,16 @@ export PATH=$PATH:$GOPATH/bin
 # alias
 alias gore='gore -autoimport'
 
+# load file if exists
+function load_if_exists () {
+    if [ -f $1 ]; then
+        source $1
+    fi
+}
+
+# work setting
+load_if_exists "$HOME/work-config.zsh"
+
 # peco src
 function peco-src() {
     local src=$(ghq list | peco --query "$LBUFFER")
