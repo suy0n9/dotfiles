@@ -5,6 +5,7 @@ do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
     [[ "$f" == ".swp" ]] && continue
+    [[ "$f" == ".gitignore" ]] && continue
 
     # check symlink & unlink
     [[ -L ~/$f ]] && unlink ~/$f
