@@ -10,21 +10,27 @@ zplug "themes/candy", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
-zplug "plugins/git",   from:oh-my-zsh
+# zplug "plugins/git",   from:oh-my-zsh
 
 
 # Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 zplug load
 
 
 # autoload -U compinit && compinit -u
 zstyle ':completion:*:default' menu select=1
+
+# ls colors
+autoload -U colors && colors
+
+# Enable ls colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -32,6 +38,11 @@ alias vimconfig="vim ~/.vimrc"
 alias gitconfig="vim ~/.gitconfig"
 alias gore='gore -autoimport'
 alias src='$(ghq root)'
+
+alias ls='ls -GF'
+alias ll='ls -l'
+alias la='ls -la'
+alias lt='ls -ltr'
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -105,9 +116,9 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-# work config
-if [[ -f ~/work.zsh ]]; then
-    source ~/work.zsh
+# local config
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
 fi
 
 # zprof
