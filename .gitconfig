@@ -1,25 +1,32 @@
 [user]
     name = suy0n9
     email = suy01v9@gmail.com
+
 [includeIf "gitdir:~/dev/src/work/"]
     path = ~/.gitconfig.local
+
 [core]
-    excludesfile = /Users/suyong/.gitignore_global
+    excludesfile = ~/.gitignore_global
+    pager = less
+
 [color]
     ui = true
+
 [alias]
     co = checkout
     st = status
     br = branch
     cm = commit
-    loga = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=format:'%c' --all --graph
-[commit]
-    template = /Users/suyong/.stCommitMsg
+    loga = log --graph --all --pretty='format:%C(yellow)%h %C(green)%cd %C(cyan)%cn %C(reset)%s %C(red)%d' --date=short
+
 [ghq]
     root = ~/dev/src
+
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
     diff = diff-highlight | less
-[interactive]
-    diffFilter = diff-highlight
+
+[diff]
+    tool = vimdiff
+    compactionHeuristic = true
