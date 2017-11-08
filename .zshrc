@@ -22,6 +22,8 @@ do
     source $f
 done
 
+# like a emacs bind
+bindkey -e
 
 # anyenv
 # if [ -d $HOME/.anyenv ] ; then
