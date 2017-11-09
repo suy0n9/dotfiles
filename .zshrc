@@ -14,7 +14,8 @@ fi
 zplug load
 
 
-zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select=1 # 補完候補のカーソル選択を有効
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字/小文字を区別しない
 
 # read settings
 for f in ~/.zsh/*.zsh
