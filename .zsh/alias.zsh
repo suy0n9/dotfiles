@@ -7,7 +7,7 @@ alias gitconfig="vim ~/.gitconfig"
 alias gore='gore -autoimport'
 
 # ghq
-alias src='$(ghq root)'
+alias src='cd $(ghq root)'
 
 # ls
 alias ls='ls -GF'
