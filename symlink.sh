@@ -26,3 +26,6 @@ do
     ln -sv $filePath ~/$f
     echo "create symbolic link [ $f -> $filePath ]"
 done
+
+# set symlink for flake8
+ln -s ~/dev/src/github.com/suy0n9/dotfiles/flake8 ~/.config/flake8

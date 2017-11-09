@@ -10,6 +10,7 @@ repo = 'ujihisa/unite-colorscheme'
 
 [[plugins]]
 repo = 'w0rp/ale'
+hook_add = 'source ~/.vim/rc/plugins/ale.rc.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
