@@ -22,11 +22,19 @@
 [ghq]
     root = ~/dev/src
 
-[pager]
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
+[color "diff"]
+    meta = 015 236
+    #frag = 239 236
+    #old = 167 normal
+    #new = 030 normal
+    context = 240
+    commit = 226
 
 [diff]
     tool = vimdiff
     compactionHeuristic = true
+
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
