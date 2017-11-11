@@ -15,6 +15,7 @@ zplug load
 
 
 zstyle ':completion:*:default' menu select=1 # 補完候補のカーソル選択を有効
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # 保管時にcolorを有効
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字/小文字を区別しない
 
 # read settings
@@ -25,19 +26,6 @@ done
 
 # like a emacs bind
 bindkey -e
-
-# anyenv
-# if [ -d $HOME/.anyenv ] ; then
-#     export PATH="$HOME/.anyenv/bin:$PATH"
-#     eval "$(anyenv init -)"
-#     for D in `ls $HOME/.anyenv/envs`
-#     do
-#         export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-#     done
-#  fi
-
-# gvm
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # pyenv
 PYENV_ROOT=$HOME/.pyenv
