@@ -77,11 +77,79 @@
       ignore_errors: True
       register: cask_result
 
-    # oh-my-zsh
-    - name: install oh-my-zsh
-      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-      args:
-        creates: ~/.oh-my-zsh/
+    # finder defaults
+    - name: finder show all files
+      osx_defaults:
+        domain: com.apple.finder
+        key: AppleShowAllFiles
+        type: bool
+        value: true
+        state: present
+      notify: Restart Finder
+
+    - name: finder show all extensions
+      osx_defaults:
+        domain: com.apple.finder
+        key: AppleShowAllExtensions
+        type: bool
+        value: true
+        state: present
+      notify: Restart Finder
+
+    - name: finder show pathbar
+      osx_defaults:
+        domain: com.apple.finder
+        key: ShowPathbar
+        type: bool
+        value: true
+        state: present
+      notify: Restart Finder
+
+    - name: finder show status bar
+      osx_defaults:
+        domain: com.apple.finder
+        key: ShowStatusBar
+        type: bool
+        value: true
+        state: present
+      notify: Restart Finder
+
+    # dock defaults
+    - name: dock tilesize
+      osx_defaults:
+        domain: com.apple.dock
+        key: tilesize
+        type: int
+        value: 30
+        state: present
+      notify: Restart Dock
+
+    - name: dock orientation left
+      osx_defaults:
+        domain: com.apple.dock
+        key: orientation
+        type: string
+        value: left
+        state: present
+      notify: Restart Dock
+
+    - name: dock magnification
+      osx_defaults:
+        domain: com.apple.dock
+        key: magnification
+        type: bool
+        value: true
+        state: present
+      notify: Restart Dock
+
+    - name: dock auto hide
+      osx_defaults:
+        domain: com.apple.dock
+        key: autohide
+        type: int
+        value: 1
+        state: present
+      notify: Restart Dock
 
   handlers:
       - name: run fc-cache

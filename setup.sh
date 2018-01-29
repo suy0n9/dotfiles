@@ -27,15 +27,14 @@ case $ANSWER in
   * ) echo "skip" ;;
 esac
 
-echo '************ clone mac_setup?[Y/n]'
+echo '************ clone dotfiles?[Y/n]'
 read ANSWER
 
-if [ -e ~/mac_setup ]; then
-  command="cd ~/mac_setup && git pull origin master"
+if [ -e ~/dotfiles ]; then
+  command="cd ~/dotfiles && git pull origin master"
 else
-  command="git clone https://github.com/suy0ng/mac_setup.git"
+  command="git clone https://github.com/suy0n9/dotfiles.git"
 fi
-
 case $ANSWER in
   "" | "Y" | "y" )
     eval $command ;;
@@ -65,7 +64,7 @@ echo '************ setup dotfiles?[Y/n]'
 read ANSWER
 case $ANSWER in
   "" | "Y" | "y" )
-    cd ~/mac_setup/dotfiles
+    cd ~/dotfiles
     ./symlink.sh ;;
   * ) echo "skip" ;;
 esac
