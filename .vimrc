@@ -47,11 +47,11 @@ set laststatus=2
 "*****************************************************************************
 "" Mapping
 "*****************************************************************************
-inoremap { {}<Left>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap ( ()<ESC>i
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-inoremap [ []<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
+" inoremap { {}<Left>
+" inoremap {<Enter> {}<Left><CR><ESC><S-o>
+" inoremap ( ()<ESC>i
+" inoremap (<Enter> ()<Left><CR><ESC><S-o>
+" inoremap [ []<LEFT>
+" inoremap " ""<LEFT>
+" inoremap ' ''<LEFT>
 
