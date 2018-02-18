@@ -24,6 +24,10 @@ set smarttab
 set shiftwidth=4
 set smartindent
 
+filetype plugin indent on
+
+autocmd filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
 "" Searching
 set hlsearch "ハイライト検索
 set ignorecase "大文字/小文字の区別なく検索する
