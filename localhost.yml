@@ -28,6 +28,7 @@
       - { name: peco }
       - { name: gibo }
     homebrew_cask_packages:
+      - { name: alfred }
       - { name: iterm2 }
       - { name: firefox }
       - { name: google-chrome }
