@@ -17,6 +17,13 @@ repo  = 'elzr/vim-json'
 on_ft = ['json']
 hook_add = 'source ~/.vim/rc/plugins/json.rc.vim'
 
+# html
+[[plugins]]
+repo  = 'mattn/emmet-vim'
+# on_ft = ['html','css']
+hook_add = 'source ~/.vim/rc/plugins/emmet.rc.vim'
+
+
 # toml
 [[plugins]]
 repo  = 'cespare/vim-toml'
