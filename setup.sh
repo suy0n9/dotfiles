@@ -55,7 +55,7 @@ echo '************ run ansible?[Y/n]'
 read ANSWER
 case $ANSWER in
   "" | "Y" | "y" )
-    cd ~/mac_setup
+    cd ~/dotfiles
     ansible-playbook -i hosts -vv localhost.yml ;;
   * ) echo "skip" ;;
 esac
