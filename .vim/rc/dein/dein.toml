@@ -25,3 +25,6 @@ hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
