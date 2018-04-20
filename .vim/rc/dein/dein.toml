@@ -18,6 +18,13 @@ hook_add = 'source ~/.vim/rc/plugins/indentline.rc.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+hook_add = """
+let NERDTreeShowHidden=1
+"""
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = 'source ~/.vim/rc/plugins/vim-nerdtree-syntax-highlight.rc.vim'
 
 #[[plugins]]
 #repo = 'itchyny/lightline.vim'
@@ -38,3 +45,8 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+hook_add = """
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"""
+
