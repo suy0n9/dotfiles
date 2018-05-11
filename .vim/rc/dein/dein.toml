@@ -19,10 +19,6 @@ hook_add = 'source ~/.vim/rc/plugins/indentline.rc.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-#[[plugins]]
-#repo = 'itchyny/lightline.vim'
-#hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
-
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = 'source ~/.vim/rc/plugins/vim-airline.rc.vim'
