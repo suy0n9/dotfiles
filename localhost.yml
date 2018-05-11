@@ -30,6 +30,7 @@
     homebrew_cask_packages:
       - { name: alfred }
       - { name: iterm2 }
+      - { name: karabiner-elements }
       - { name: firefox }
       - { name: google-chrome }
       - { name: google-japanese-ime }
