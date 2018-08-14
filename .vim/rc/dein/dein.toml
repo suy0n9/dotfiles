@@ -37,3 +37,11 @@ repo = 'tpope/vim-fugitive'
 repo = 'ryanoasis/vim-devicons'
 hook_add = 'source ~/.vim/rc/plugins/vim-devicons.rc.vim'
 
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = 'source ~/.vim/rc/plugins/fzf.vim.rc.vim'
+
+[[plugins]]
+repo = 'mileszs/ack.vim'
+hook_add = 'source ~/.vim/rc/plugins/ack.vim.rc.vim'

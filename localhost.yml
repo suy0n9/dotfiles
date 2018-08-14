@@ -27,6 +27,8 @@
       - { name: ghq }
       - { name: peco }
       - { name: gibo }
+      - { name: fzf }
+      - { name: ag }
     homebrew_cask_packages:
       - { name: alfred }
       - { name: iterm2 }

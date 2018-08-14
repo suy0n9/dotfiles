@@ -54,6 +54,9 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# fzf
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+
 # local config
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
