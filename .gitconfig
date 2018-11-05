@@ -32,7 +32,7 @@
 
 [diff]
     tool = vimdiff
-    compactionHeuristic = true
+    indentHeuristic = true
 
 [pager]
     log = diff-highlight | less
