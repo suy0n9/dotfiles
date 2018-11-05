@@ -4,9 +4,8 @@
   become: no
   vars:
     homebrew_taps:
-      - homebrew/binary
-      - homebrew/dupes
       - caskroom/cask
+      - caskroom/fonts
     homebrew_packages:
       - { name: readline }
       - { name: openssl }
@@ -47,6 +46,7 @@
       - { name: virtualbox }
       - { name: sequel-pro }
       - { name: docker }
+      - { name: font-hack-nerd-font }
 
   tasks:
     - name: add homebrew tap repository
