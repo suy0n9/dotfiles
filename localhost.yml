@@ -1,3 +1,4 @@
+---
 - hosts: localhost
   connection: local
   gather_facts: no
@@ -7,80 +8,70 @@
       - caskroom/cask
       - caskroom/fonts
     homebrew_packages:
-      - { name: readline }
-      - { name: openssl }
-      - { name: openssl, state: linked, install_options: force }
-      - { name: python }
-      - { name: pyenv }
-      - { name: ansible }
-      - { name: git }
-      - { name: mercurial }
-      - { name: zsh, install_options: disable-etcdir }
-      - { name: wget }
-      - { name: w3m }
-      - { name: curl }
-      - { name: tree }
-      - { name: mysql }
-      - { name: sqlite }
-      - { name: redis }
-      - { name: ghq }
-      - { name: peco }
-      - { name: gibo }
-      - { name: fzf }
-      - { name: ag }
+      - readline
+      - openssl
+      - python
+      - pyenv
+      - ansible
+      - git
+      - mercurial
+      - zsh
+      - wget
+      - w3m
+      - curl
+      - tree
+      - mysql
+      - sqlite
+      - redis
+      - ghq
+      - peco
+      - gibo
+      - fzf
+      - ag
     homebrew_cask_packages:
-      - { name: alfred }
-      - { name: iterm2 }
-      - { name: karabiner-elements }
-      - { name: firefox }
-      - { name: google-chrome }
-      - { name: google-japanese-ime }
-      - { name: adobe-reader }
-      - { name: java }
-      - { name: skype }
-      - { name: kindle }
-      - { name: slack }
-      - { name: skitch }
-      - { name: boostnote }
-      - { name: visual-studio-code }
-      - { name: virtualbox }
-      - { name: sequel-pro }
-      - { name: docker }
-      - { name: font-hack-nerd-font }
+      - alfred
+      - iterm2
+      - karabiner-elements
+      - firefox
+      - google-chrome
+      - google-japanese-ime
+      - adobe-reader
+      - java
+      - skype
+      - kindle
+      - slack
+      - skitch
+      - boostnote
+      - visual-studio-code
+      - virtualbox
+      - sequel-pro
+      - docker
+      - font-hack-nerd-font
 
   tasks:
     - name: add homebrew tap repository
-      homebrew_tap: tap={{ item }} state=present
-      with_items: "{{ homebrew_taps }}"
+      homebrew_tap: 
+        name: "{{ homebrew_taps }}"
+        state: "present"
 
     # update homebrew
     - name: brew update
-      homebrew: update_homebrew=yes
+      homebrew: 
+        update_homebrew: yes
 
     # homebrew
     - name: install homebrew package
-      homebrew: >
-        name={{ item.name }}
-        state={{ item.state | default('latest') }}
-        install_options={{
-          item.install_options | default() | join(',')
-          if item.install_options is not string
-          else item.install_options
-        }}
-      with_items: "{{ homebrew_packages }}"
-      register: brew_result
+      homebrew: 
+        name: "{{ homebrew_packages }}"
+        state: "present"
 
     # homebrew-cask
-    - name: install homebrew-cask
-      homebrew: name=cask state=latest
     - name: install homebrew-cask package
       homebrew_cask:
-        name={{ item.name }}
-        state={{ item.state|default('installed') }}
-        install_options='appdir=/Applications'
-      with_items: "{{ homebrew_cask_packages }}"
-      ignore_errors: True
-      register: cask_result
+        name: "{{ homebrew_cask_packages }}"
+        state: "present"
+        install_options: "appdir=/Applications"
+      ignore_errors: yes
 
     # finder defaults
     - name: finder show all files
