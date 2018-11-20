@@ -24,7 +24,6 @@ repo  = 'mattn/emmet-vim'
 # on_ft = ['html','css']
 hook_add = 'source ~/.vim/rc/plugins/emmet.rc.vim'
 
-
 # toml
 [[plugins]]
 repo  = 'cespare/vim-toml'
@@ -48,3 +47,9 @@ on_ft = ['markdown', 'mkd']
 [[plugins]]
 repo  = 'tyru/open-browser.vim'
 on_ft = ['markdown', 'mkd']
+
+# terraform
+[[plugins]]
+repo  = 'hashivim/vim-terraform'
+on_ft = ['tf']
+hook_add = 'source ~/.vim/rc/plugins/vim-terraform.rc.vim'
