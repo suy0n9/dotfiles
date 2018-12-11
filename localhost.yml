@@ -28,6 +28,7 @@
       - gibo
       - fzf
       - ag
+      - vim
     homebrew_cask_packages:
       - alfred
       - iterm2
