@@ -25,3 +25,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Editor
 export EDITOR=vim
+
+# LANGUAGE
+export LANGUAGE="en_US.UTF-8"
+export LANG="${LANGUAGE}"
