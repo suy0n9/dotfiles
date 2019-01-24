@@ -63,4 +63,4 @@ set laststatus=2
 " inoremap [ []<LEFT>
 " inoremap " ""<LEFT>
 " inoremap ' ''<LEFT>
-
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
