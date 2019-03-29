@@ -69,4 +69,13 @@ case $ANSWER in
   * ) echo "skip" ;;
 esac
 
+echo '************ set empty gitconfig.local?[Y/n]'
+read ANSWER
+case $ANSWER in
+  "" | "Y" | "y" )
+    cd ~/dotfiles
+    cp ./.gitconfig.local ~/ ;;
+  * ) echo "skip" ;;
+esac
+
 echo 'Mac setup finished!!'

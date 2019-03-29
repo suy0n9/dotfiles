@@ -5,6 +5,7 @@ do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
+    [[ "$f" == ".gitconfig.local" ]] && continue
 
     echo "===$f==="
 
