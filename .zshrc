@@ -24,8 +24,15 @@ do
     source $f
 done
 
+# ---------------------------------
+# Bind key
+# ---------------------------------
+
 # like a emacs bind
 bindkey -e
+
+bindkey '^]' peco-src
+bindkey '^r' peco-select-history
 
 # pyenv
 PYENV_ROOT=$HOME/.pyenv
@@ -43,7 +50,6 @@ function peco-src() {
     zle -R -c
 }
 zle -N peco-src
-bindkey '^]' peco-src
 
 # peco history
 function peco-select-history() {
@@ -52,7 +58,6 @@ function peco-select-history() {
   zle clear-screen
 }
 zle -N peco-select-history
-bindkey '^r' peco-select-history
 
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
