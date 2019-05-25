@@ -1,2 +1,7 @@
-## mac_setup
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/suy0n9/dotfiles/master/setup.sh)"`
+## dotfiles
+
+### Installation
+```
+git clone git@github.com:suy0n9/dotfiles.git && cd dotfiles
+make init
+```
