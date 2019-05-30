@@ -29,3 +29,6 @@ export EDITOR=vim
 # LANGUAGE
 export LANGUAGE="en_US.UTF-8"
 export LANG="${LANGUAGE}"
+
+# Setting for fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
