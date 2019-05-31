@@ -30,6 +30,7 @@ filetype plugin indent on
 
 autocmd filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd filetype sh  setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 "" Searching
 set hlsearch "ハイライト検索
@@ -64,3 +65,8 @@ set laststatus=2
 " inoremap " ""<LEFT>
 " inoremap ' ''<LEFT>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+let g:unite_enable_start_insert=1
+noremap <C-P> :Unite buffer<CR>
+noremap <C-N> :Unite -buffer-name=file file<CR>
+noremap <C-M> :Unite file_mru<CR>
