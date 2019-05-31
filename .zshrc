@@ -60,6 +60,7 @@ function peco-select-history() {
 zle -N peco-select-history
 
 # fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
