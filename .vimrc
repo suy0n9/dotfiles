@@ -6,7 +6,7 @@ set rtp+=/usr/local/opt/fzf
 
 "*****************************************************************************
 "" Basic Setup
-"*****************************************************************************"
+"*****************************************************************************
 set encoding=UTF-8
 set ambiwidth=double
 set nrformats-=octal
@@ -32,6 +32,9 @@ autocmd filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd filetype sh  setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
+au BufRead,BufNewFile *.tsv setfiletype tsv
+autocmd filetype tsv  setlocal tabstop=4 noexpandtab
+
 "" Searching
 set hlsearch "ハイライト検索
 set ignorecase "大文字/小文字の区別なく検索する
@@ -43,8 +46,9 @@ autocmd QuickFixCmdPost *grep* cwindow
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
-colorscheme Tomorrow-Night-Bright
 syntax enable
+colorscheme Tomorrow-Night-Bright
+set updatetime=100
 set number
 set title
 
@@ -53,6 +57,9 @@ set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 
 "" Statusline
 set laststatus=2
+
+"" Show gitgutter column always
+set signcolumn=yes
 
 "*****************************************************************************
 "" Mapping
@@ -65,8 +72,3 @@ set laststatus=2
 " inoremap " ""<LEFT>
 " inoremap ' ''<LEFT>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-let g:unite_enable_start_insert=1
-noremap <C-P> :Unite buffer<CR>
-noremap <C-N> :Unite -buffer-name=file file<CR>
-noremap <C-M> :Unite file_mru<CR>
