@@ -24,6 +24,11 @@ do
     source $f
 done
 
+# local config
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
+
 # ---------------------------------
 # Bind key
 # ---------------------------------
@@ -101,11 +106,6 @@ cdf() {
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
-
-# local config
-if [[ -f ~/.zshrc.local ]]; then
-    source ~/.zshrc.local
-fi
 
 # zprof
 if (which zprof > /dev/null 2>&1) ;then
