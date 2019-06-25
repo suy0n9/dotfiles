@@ -1,19 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export ZPLUG_LOADFILE=~/.zsh/zplug.zsh
-source $ZPLUG_HOME/init.zsh
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-zplug load
-
-
 zstyle ':completion:*:default' menu select=1 # 補完候補のカーソル選択を有効
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # 保管時にcolorを有効
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字/小文字を区別しない
@@ -28,6 +15,27 @@ done
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+
+# ---------------------------------
+# Plugin
+# ---------------------------------
+source $ZPLUG_HOME/init.zsh
+
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load
 
 # ---------------------------------
 # Bind key
