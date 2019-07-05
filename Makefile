@@ -14,6 +14,7 @@ install: ## Install Homebrew packages, other setup
 	$(info ********  Install packages. ********)
 	@bash install-brew.sh
 	@bash install-go.sh
+	@bash install-plug.sh
 
 init: deploy install ## Run make deploy, make install
 
