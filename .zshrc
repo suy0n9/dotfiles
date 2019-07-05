@@ -5,16 +5,53 @@ zstyle ':completion:*:default' menu select=1 # 補完候補のカーソル選択
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # 保管時にcolorを有効
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字/小文字を区別しない
 
-# read settings
-for f in ~/.zsh/*.zsh
-do
-    source $f
-done
-
 # local config
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+
+# ---------------------------------
+# alias
+# ---------------------------------
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias gitconfig="vim ~/.gitconfig"
+
+# go
+alias gore='gore -autoimport'
+
+# ghq
+alias src='cd $(ghq root)'
+
+# ls
+alias ls='ls -GF'
+alias ll='ls -l'
+alias la='ls -la'
+alias lt='ls -ltr'
+
+# ---------------------------------
+# setopt
+# ---------------------------------
+# 日本語ファイル名を表示可能にする
+setopt print_eight_bit
+
+# cd -<tab>で以前移動したディレクトリを表示
+setopt auto_pushd
+
+# 同時に起動したzshの間でヒストリを共有する
+setopt share_history
+
+# 直前と同じコマンドの場合は履歴に追加しない
+setopt hist_ignore_dups
+
+# 同じコマンドをヒストリに残さない
+setopt hist_ignore_all_dups
+
+# スペースから始まるコマンド行はヒストリに残さない
+setopt hist_ignore_space
+
+# ヒストリに保存するときに余分なスペースを削除する
+setopt hist_reduce_blanks
 
 # ---------------------------------
 # Plugin
