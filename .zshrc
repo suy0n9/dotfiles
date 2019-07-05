@@ -1,22 +1,81 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-zstyle ':completion:*:default' menu select=1 # 補完候補のカーソル選択を有効
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # 保管時にcolorを有効
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字/小文字を区別しない
-
+# --------------------------------------------------------------------
+# General
+# --------------------------------------------------------------------
 # local config
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
 
-# ---------------------------------
-# alias
-# ---------------------------------
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
-alias gitconfig="vim ~/.gitconfig"
+# --------------------------------------------------------------------
+# Environment variables
+# --------------------------------------------------------------------
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export LANG=en_US.UTF-8
+export EDITOR=vim
+export ZPLUG_HOME=/usr/local/opt/zplug
+
+# Enable ls colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+export LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+# history
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
+# setting for go
+export GOPATH=$HOME/dev
+export PATH=$PATH:$GOPATH/bin
+
+# pyenv
+PYENV_ROOT=$HOME/.pyenv
+export PATH=$PATH:$PYENV_ROOT/bin
+eval "$(pyenv init -)"
+
+# --------------------------------------------------------------------
+# Completion
+# --------------------------------------------------------------------
+# Initialization
+autoload -U compinit
+
+# menu select
+zstyle ':completion:*:default' menu select=1
+
+# Enable list color
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# --------------------------------------------------------------------
+# Options
+# --------------------------------------------------------------------
+# Enable display of Japanese file name
+setopt print_eight_bit
+
+# Make cd push the old directory onto the directory stack. 'cd -<TAB>'
+setopt auto_pushd
+
+# Share history
+setopt share_history
+
+# Remove old command from list if history list command is duplicated
+setopt hist_ignore_all_dups
+
+# Ignore duplicate history
+setopt hist_ignore_dups
+
+# Remove from history list if starting from space
+setopt hist_ignore_space
+
+# Remove extra blanks from each command line being added to the history list.
+setopt hist_reduce_blanks
+
+# --------------------------------------------------------------------
+# Alias
+# --------------------------------------------------------------------
 # go
 alias gore='gore -autoimport'
 
@@ -29,33 +88,18 @@ alias ll='ls -l'
 alias la='ls -la'
 alias lt='ls -ltr'
 
-# ---------------------------------
-# setopt
-# ---------------------------------
-# 日本語ファイル名を表示可能にする
-setopt print_eight_bit
+# --------------------------------------------------------------------
+# Bind key
+# --------------------------------------------------------------------
+# like a emacs bind
+bindkey -e
 
-# cd -<tab>で以前移動したディレクトリを表示
-setopt auto_pushd
+bindkey '^]' peco-src
+bindkey '^r' peco-select-history
 
-# 同時に起動したzshの間でヒストリを共有する
-setopt share_history
-
-# 直前と同じコマンドの場合は履歴に追加しない
-setopt hist_ignore_dups
-
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
-
-# スペースから始まるコマンド行はヒストリに残さない
-setopt hist_ignore_space
-
-# ヒストリに保存するときに余分なスペースを削除する
-setopt hist_reduce_blanks
-
-# ---------------------------------
+# --------------------------------------------------------------------
 # Plugin
-# ---------------------------------
+# --------------------------------------------------------------------
 source $ZPLUG_HOME/init.zsh
 
 zplug mafredri/zsh-async, from:github
@@ -74,23 +118,8 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-# ---------------------------------
-# Bind key
-# ---------------------------------
-
-# like a emacs bind
-bindkey -e
-
-bindkey '^]' peco-src
-bindkey '^r' peco-select-history
-
-# pyenv
-PYENV_ROOT=$HOME/.pyenv
-export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init -)"
-
-
-# peco src
+# Peco
+# --------------------------------------------------------------------
 function peco-src() {
     local src=$(ghq list | peco --query "$LBUFFER")
     if [ -n "$src" ]; then
@@ -110,6 +139,7 @@ function peco-select-history() {
 zle -N peco-select-history
 
 # fzf
+# --------------------------------------------------------------------
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 
@@ -151,8 +181,3 @@ cdf() {
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
-
-# zprof
-if (which zprof > /dev/null 2>&1) ;then
-  zprof | less
-fi
