@@ -199,6 +199,9 @@ autocmd FileType html,css EmmetInstall
 " To disable the folding configuration
 let g:vim_markdown_folding_disabled = 1
 
+" Disabling conceal for code fences
+let g:vim_markdown_conceal_code_blocks = 0
+
 " ----------------------------------------------------------------------------
 " vim-terraform
 " ----------------------------------------------------------------------------
