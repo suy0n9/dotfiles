@@ -18,6 +18,7 @@
     br = branch
     cm = commit
     loga = log --graph --all --pretty='format:%C(yellow)%h %C(green)%cd %C(cyan)%cn %C(reset)%s %C(red)%d' --date=short
+    see = browse
 
 [ghq]
     root = ~/dev/src
