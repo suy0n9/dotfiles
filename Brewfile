@@ -24,6 +24,7 @@ brew "wget"
 brew "zplug"
 brew "zsh"
 
+cask "alfred"
 cask "boostnote"
 cask "docker"
 cask "font-hack-nerd-font"
