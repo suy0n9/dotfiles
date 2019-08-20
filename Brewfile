@@ -23,6 +23,7 @@ brew "vim"
 brew "wget"
 brew "zplug"
 brew "zsh"
+brew "the_silver_searcher"
 
 cask "alfred"
 cask "boostnote"
