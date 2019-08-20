@@ -1,4 +1,4 @@
-EXCLUSIONS	:= .git .DS_Store .gitignore $(wildcard .*.swp)
+EXCLUSIONS	:= .git .DS_Store .gitignore .config $(wildcard .*.swp)
 CANDIDATES	:= $(wildcard .??*)
 DOTFILES	:= $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
@@ -9,6 +9,7 @@ all:
 deploy: ## Deploy dotfiles
 	$(info ********  Create symlink of dotfiles to home directory. ********)
 	@$(foreach f, $(DOTFILES), ln -snfv $(abspath $(f)) $(HOME)/$(f);)
+	@bash deploy-config.sh
 
 install: ## Install Homebrew packages, other setup
 	$(info ********  Install packages. ********)
