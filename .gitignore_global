@@ -2,4 +2,4 @@
 .DS_Store
 
 # Vim
-*.swp
+[._]*.sw[a-p]
