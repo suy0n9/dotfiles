@@ -19,6 +19,7 @@
     cm = commit
     loga = log --graph --all --pretty='format:%C(yellow)%h %C(green)%cd %C(cyan)%cn %C(reset)%s %C(red)%d' --date=short
     see = browse
+    pr = pull-request
 
 [ghq]
     root = ~/dev/src
