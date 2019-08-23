@@ -135,6 +135,7 @@ let g:indentLine_concealcursor = ''
 let NERDTreeShowHidden=1
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
+let NERDTreeIgnore = ['\.swp$']
 " ----------------------------------------------------------------------------
 " vim-nerdtree-syntax-highlight
 " ----------------------------------------------------------------------------
