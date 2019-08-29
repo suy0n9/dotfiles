@@ -88,6 +88,14 @@ alias ll='ls -l'
 alias la='ls -la'
 alias lt='ls -ltr'
 
+# k8s
+alias kg='kubectl get'
+alias kd='kubectl describe'
+
+# zsh
+alias sz='source ~/.zshrc'
+alias vz='vim ~/.zshrc'
+
 # --------------------------------------------------------------------
 # Bind key
 # --------------------------------------------------------------------
