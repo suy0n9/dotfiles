@@ -93,7 +93,7 @@ alias kg='kubectl get'
 alias kd='kubectl describe'
 
 # zsh
-alias sz='source ~/.zshrc'
+alias sss='source ~/.zshrc'
 alias vz='vim ~/.zshrc'
 
 # --------------------------------------------------------------------
@@ -110,8 +110,8 @@ bindkey '^r' peco-select-history
 # --------------------------------------------------------------------
 source $ZPLUG_HOME/init.zsh
 
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug "mafredri/zsh-async", from:github, use:"async.zsh"
+zplug "sindresorhus/pure", use:"pure.zsh", from:github, as:theme
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -189,3 +189,8 @@ cdf() {
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
+
+# Settings
+# --------------------------------------------------------------------
+# Enables kubectl completion
+source <(kubectl completion zsh)
