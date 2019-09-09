@@ -49,6 +49,9 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Case-insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+# change the path color
+zstyle :prompt:pure:path color cyan
+
 # --------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------
@@ -89,6 +92,7 @@ alias la='ls -la'
 alias lt='ls -ltr'
 
 # k8s
+alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
 
