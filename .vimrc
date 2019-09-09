@@ -66,6 +66,8 @@ set signcolumn=yes
 " inoremap ' ''<LEFT>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+map <C-n> :NERDTreeToggle<CR>
+
 " ============================================================================
 " Plugin
 " ============================================================================
