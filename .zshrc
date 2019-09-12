@@ -95,6 +95,8 @@ alias lt='ls -ltr'
 alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
+alias kx='kubectx'
+alias kn='kubens'
 
 # zsh
 alias sss='source ~/.zshrc'
