@@ -2,7 +2,7 @@ EXCLUSIONS	:= .git .DS_Store .gitignore .config $(wildcard .*.swp)
 CANDIDATES	:= $(wildcard .??*)
 DOTFILES	:= $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
-.DEFAUL_GOAL := help
+.DEFAULT_GOAL := help
 
 all:
 
