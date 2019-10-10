@@ -98,6 +98,11 @@ alias kd='kubectl describe'
 alias kx='kubectx'
 alias kn='kubens'
 
+# list and select k8s pods with fzf
+# e.g.
+#   kubectl exec -it P bash
+alias -g P='$(kubectl get po | fzf | awk "{print \$1}")'
+
 # zsh
 alias sss='source ~/.zshrc'
 alias vz='vim ~/.zshrc'
@@ -200,3 +205,4 @@ cdf() {
 # --------------------------------------------------------------------
 # Enables kubectl completion
 source <(kubectl completion zsh)
+source <(stern --completion=zsh)
