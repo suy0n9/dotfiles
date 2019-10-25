@@ -76,6 +76,8 @@ setopt hist_ignore_space
 # Remove extra blanks from each command line being added to the history list.
 setopt hist_reduce_blanks
 
+setopt nonomatch
+
 # --------------------------------------------------------------------
 # Alias
 # --------------------------------------------------------------------
