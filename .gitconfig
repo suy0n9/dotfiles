@@ -2,9 +2,6 @@
     name = suy0n9
     email = suy01v9@gmail.com
 
-[includeIf "gitdir:~/dev/src/work/"]
-    path = ~/.gitconfig.local
-
 [core]
     excludesfile = ~/.gitignore_global
     pager = less
