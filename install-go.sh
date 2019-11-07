@@ -10,7 +10,6 @@ PKGS=(
     golang.org/x/tools/cmd/gorename
     golang.org/x/tools/cmd/guru
 
-    github.com/motemen/ghq
     github.com/mdempsky/gocode
     github.com/rogpeppe/godef
 )
