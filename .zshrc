@@ -52,6 +52,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # change the path color
 zstyle :prompt:pure:path color cyan
 
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 # --------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------
@@ -209,9 +210,3 @@ cdf() {
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
-
-# Settings
-# --------------------------------------------------------------------
-# Enables kubectl completion
-source <(kubectl completion zsh)
-source <(stern --completion=zsh)
