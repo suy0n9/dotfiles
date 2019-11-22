@@ -89,6 +89,11 @@ else
     alias diff='diff -u'
 fi
 
+# find
+if [[ -x `which gfind` ]]; then
+    alias find='gfind'
+fi
+
 # go
 alias gore='gore -autoimport'
 
