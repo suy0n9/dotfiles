@@ -6,6 +6,7 @@ tap "homebrew/core"
 
 brew "cask"
 brew "colordiff"
+brew "coreutils"
 brew "curl"
 brew "fzf"
 brew "findutils"

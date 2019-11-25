@@ -11,6 +11,11 @@ fi
 # --------------------------------------------------------------------
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
@@ -89,11 +94,6 @@ else
     alias diff='diff -u'
 fi
 
-# find
-if [[ -x `which gfind` ]]; then
-    alias find='gfind'
-fi
-
 # go
 alias gore='gore -autoimport'
 
@@ -101,7 +101,7 @@ alias gore='gore -autoimport'
 alias src='cd $(ghq root)'
 
 # ls
-alias ls='ls -GF'
+alias ls='ls -r --color=auto'
 alias ll='ls -l'
 alias la='ls -la'
 alias lt='ls -ltr'
