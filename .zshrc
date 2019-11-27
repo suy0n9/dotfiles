@@ -7,6 +7,26 @@ if [[ -f ~/.zshrc.local ]]; then
 fi
 
 # --------------------------------------------------------------------
+# Completion
+# --------------------------------------------------------------------
+# Initialization
+autoload -Uz compinit && compinit
+
+# menu select
+zstyle ':completion:*:default' menu select=1
+
+# Enable list color
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# change the path color
+zstyle :prompt:pure:path color cyan
+
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+
+# --------------------------------------------------------------------
 # Environment variables
 # --------------------------------------------------------------------
 # If you come from bash you might have to change your $PATH.
@@ -34,25 +54,6 @@ PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
 
-# --------------------------------------------------------------------
-# Completion
-# --------------------------------------------------------------------
-# Initialization
-autoload -U compinit
-
-# menu select
-zstyle ':completion:*:default' menu select=1
-
-# Enable list color
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# Case-insensitive
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# change the path color
-zstyle :prompt:pure:path color cyan
-
-fpath=(/usr/local/share/zsh/site-functions $fpath)
 # --------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------
