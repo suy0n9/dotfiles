@@ -49,11 +49,11 @@ export SAVEHIST=100000
 export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
 
-# pyenv
-PYENV_ROOT=$HOME/.pyenv
-export PATH=$PATH:$PYENV_ROOT/bin
-eval "$(pyenv init -)"
+# direnv
+eval "$(direnv hook zsh)"
 
+# aws completer
+[ -f /usr/local/share/zsh/site-functions/_aws ] && source /usr/local/share/zsh/site-functions/_aws
 # --------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------
