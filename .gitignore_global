@@ -3,3 +3,6 @@
 
 # Vim
 [._]*.sw[a-p]
+
+# direnv
+.envrc
