@@ -211,3 +211,33 @@ cdf() {
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
+
+# fssh - ssh to the selected host
+fssh() {
+    local sshLoginHost
+    sshLoginHost=$(cat ~/.ssh/config | grep -i ^host | grep -v '*' | awk '{print $2}' | fzf)
+
+    if [ -z "$sshLoginHost" ]; then
+        return 1
+    fi
+
+    ssh ${sshLoginHost}
+}
+
+# awx - switch to the selected aws profile
+awx() {
+    local prof=$(cat ~/.aws/config | awk '/\[.+\]/ { print $2 }'| tr -d "]" | fzf)
+    if [ -z "$prof" ]; then
+        return 1
+    fi
+
+    export AWS_PROFILE=${prof}
+    echo export AWS_PROFILE=${prof}
+}
+
+# other
+# --------------------------------------------------------------------
+# aws-current - print current aws profile
+aws-current () {
+    echo "${AWS_PROFILE}"
+}
