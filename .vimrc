@@ -26,7 +26,16 @@ autocmd filetype sh  setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 autocmd BufRead,BufNewFile *.tsv setfiletype tsv
 autocmd filetype tsv  setlocal tabstop=4 noexpandtab
-" autocmd BufWritePre * %s/\s\+$//e "Automatically removing all trailing whitespace
+
+"Automatically removing trailing whitespace
+fun! StripTrailingWhiteSpace()
+    " don't strip on these filetypes
+    if &ft =~ 'markdown'
+        return
+    endif
+    %s/\s\+$//e
+endfun
+autocmd BufWritePre * :call StripTrailingWhiteSpace()
 
 "" Searching
 set hlsearch "ハイライト検索
