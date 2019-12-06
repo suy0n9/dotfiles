@@ -20,6 +20,9 @@ set smarttab
 set shiftwidth=4
 set smartindent
 
+"" cursor
+set cursorline
+
 autocmd filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd filetype sh  setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
