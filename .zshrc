@@ -114,7 +114,8 @@ alias kn='kubens'
 #   kubectl exec -it P bash
 alias -g P='$(kubectl get po | fzf | awk "{print \$1}")'
 
-# zsh
+alias lg='lazygit'
+
 alias sss='source ~/.zshrc'
 alias vz='vim ~/.zshrc'
 
