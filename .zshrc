@@ -1,6 +1,8 @@
 # --------------------------------------------------------------------
 # General
 # --------------------------------------------------------------------
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+
 # local config
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
@@ -10,7 +12,7 @@ fi
 # Completion
 # --------------------------------------------------------------------
 # Initialization
-autoload -Uz compinit && compinit
+autoload -U compinit && compinit
 
 # menu select
 zstyle ':completion:*:default' menu select=1
@@ -24,7 +26,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # change the path color
 zstyle :prompt:pure:path color cyan
 
-fpath=(/usr/local/share/zsh/site-functions $fpath)
+# pipenv
+eval "$(pipenv --completion)"
+
+# aws completer
+[ -f /usr/local/share/zsh/site-functions/aws_zsh_completer.sh ] && source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
 # --------------------------------------------------------------------
 # Environment variables
@@ -52,8 +58,6 @@ export PATH=$PATH:$GOPATH/bin
 # direnv
 eval "$(direnv hook zsh)"
 
-# aws completer
-[ -f /usr/local/share/zsh/site-functions/_aws ] && source /usr/local/share/zsh/site-functions/_aws
 # --------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------
@@ -118,6 +122,7 @@ alias lg='lazygit'
 
 alias sss='source ~/.zshrc'
 alias vz='vim ~/.zshrc'
+alias vv='vim ~/.vimrc'
 
 # --------------------------------------------------------------------
 # Bind key
@@ -133,7 +138,7 @@ bindkey '^r' peco-select-history
 # --------------------------------------------------------------------
 source $ZPLUG_HOME/init.zsh
 
-zplug "mafredri/zsh-async", from:github, use:"async.zsh"
+zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:"pure.zsh", from:github, as:theme
 
 zplug "zsh-users/zsh-completions"
