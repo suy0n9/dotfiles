@@ -97,6 +97,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'Shougo/unite.vim'
+Plug 'luochen1990/rainbow'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -164,6 +165,11 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let b:airline_whitespace_disabled = 1
+
+" ----------------------------------------------------------------------------
+" rainbow
+" ----------------------------------------------------------------------------
+let g:rainbow_active = 1
 
 " ----------------------------------------------------------------------------
 " vim-gitgutter
