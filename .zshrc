@@ -1,6 +1,11 @@
 # --------------------------------------------------------------------
 # General
 # --------------------------------------------------------------------
+# Auto complie
+if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
+    zcompile ~/.zshrc
+fi
+
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 # local config
@@ -12,7 +17,12 @@ fi
 # Completion
 # --------------------------------------------------------------------
 # Initialization
-autoload -U compinit && compinit
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+    compinit
+else
+    compinit -C
+fi
 
 # menu select
 zstyle ':completion:*:default' menu select=1
@@ -144,14 +154,6 @@ zplug "sindresorhus/pure", use:"pure.zsh", from:github, as:theme
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
 zplug load
 
 # Peco
@@ -247,3 +249,8 @@ awx() {
 aws-current () {
     echo "${AWS_PROFILE}"
 }
+
+# Use zprof
+if (which zprof > /dev/null 2>&1) ;then
+      zprof | less
+fi
