@@ -104,7 +104,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " lang
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'mattn/emmet-vim'
@@ -187,6 +191,30 @@ highlight GitGutterChangeDelete ctermfg=4
 " ----------------------------------------------------------------------------
 let g:webdevicons_enable_nerdtree = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+
+" ----------------------------------------------------------------------------
+" vim-lsp
+" ----------------------------------------------------------------------------
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+let g:lsp_diagnostics_enabled = 0       " disable diagnostics support
+
+" Mappings
+" --------------------------
+nmap gd <plug>(lsp-definition)
+nmap gD <plug>(lsp-references)
+
+" debug
+" --------------------------
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+" let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 " ----------------------------------------------------------------------------
 " vim-go
