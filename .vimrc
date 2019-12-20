@@ -69,13 +69,8 @@ set signcolumn=yes
 " ============================================================================
 " Mapping
 " ============================================================================
-" inoremap { {}<Left>
-" inoremap {<Enter> {}<Left><CR><ESC><S-o>
-" inoremap ( ()<ESC>i
-" inoremap (<Enter> ()<Left><CR><ESC><S-o>
-" inoremap [ []<LEFT>
-" inoremap " ""<LEFT>
-" inoremap ' ''<LEFT>
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 map <C-n> :NERDTreeToggle<CR>
@@ -207,8 +202,9 @@ let g:lsp_diagnostics_enabled = 0       " disable diagnostics support
 
 " Mappings
 " --------------------------
-nmap gd <plug>(lsp-definition)
-nmap gD <plug>(lsp-references)
+nmap <Leader>d <plug>(lsp-definition)
+nmap <Leader>r <plug>(lsp-references)
+nmap <Leader>h <plug>(lsp-hover)
 
 " debug
 " --------------------------
