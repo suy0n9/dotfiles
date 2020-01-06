@@ -20,6 +20,9 @@
 [ghq]
     root = ~/dev/src
 
+[include]
+    path = ~/.gitconfig.work.ghq
+
 [color "diff"]
     meta = 015 236
     #frag = 239 236
@@ -36,3 +39,6 @@
     log = diff-highlight | less
     show = diff-highlight | less
     diff = diff-highlight | less
+
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig.work

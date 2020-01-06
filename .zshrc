@@ -161,7 +161,8 @@ zplug load
 function peco-src() {
     local src=$(ghq list | peco --query "$LBUFFER")
     if [ -n "$src" ]; then
-        BUFFER="cd ${GOPATH}/src/$src"
+        src=$(ghq list --full-path --exact $src)
+        BUFFER="cd $src"
         zle accept-line
     fi
     zle -R -c
