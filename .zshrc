@@ -159,7 +159,7 @@ zplug load
 # Peco
 # --------------------------------------------------------------------
 function peco-src() {
-    local src=$(ghq list | peco --query "$LBUFFER")
+    local src=$(ghq list | sort | peco --query "$LBUFFER")
     if [ -n "$src" ]; then
         src=$(ghq list --full-path --exact $src)
         BUFFER="cd $src"
