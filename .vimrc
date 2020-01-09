@@ -70,10 +70,14 @@ set signcolumn=yes
 " Mapping
 " ============================================================================
 let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>w :<C-u>w<CR>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
-map <C-n> :NERDTreeToggle<CR>
+" Quickfix
+nnoremap <silent> <C-p> :<C-u>cprevious<CR>
+nnoremap <silent> <C-n> :<C-u>cnext<CR>
+
+nnoremap <silent> <Leader>t :<C-u>NERDTreeToggle<CR>
 
 " ============================================================================
 " Plugin
