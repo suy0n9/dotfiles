@@ -97,6 +97,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'Shougo/unite.vim'
 Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " git
 Plug 'airblade/vim-gitgutter'
