@@ -187,7 +187,7 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 #   - Exit if there's no match (--exit-0)
 fe() {
   local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  IFS=$'\n' files=$(fzf --query="$1" --multi --select-1 --exit-0)
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
