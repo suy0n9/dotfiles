@@ -57,6 +57,7 @@ fssh() {
         return 1
     fi
 
+    echo ssh ${sshLoginHost}
     ssh ${sshLoginHost}
 }
 
