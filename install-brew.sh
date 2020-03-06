@@ -2,9 +2,9 @@
 
 set -eu
 
-if !(type brew > /dev/null 2>&1); then
+if ! (type brew > /dev/null 2>&1); then
     echo '[INFO] ************ Installing Homebrew'
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
     echo '[INFO] ************ Homebrew is already exist'
 fi
