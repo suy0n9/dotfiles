@@ -37,9 +37,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # change the path color
 zstyle :prompt:pure:path color cyan
 
-# aws completer
-[ -f /usr/local/share/zsh/site-functions/aws_zsh_completer.sh ] && source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
-
 # --------------------------------------------------------------------
 # Environment variables
 # --------------------------------------------------------------------
