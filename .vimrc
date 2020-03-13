@@ -79,6 +79,10 @@ nnoremap <silent> <C-n> :<C-u>cnext<CR>
 
 nnoremap <silent> <Leader>t :<C-u>NERDTreeToggle<CR>
 
+" Buffer
+nnoremap <silent> <Space>p :bprevious<CR>
+nnoremap <silent> <Space>n :bnext<CR>
+
 " ============================================================================
 " Plugin
 " ============================================================================
