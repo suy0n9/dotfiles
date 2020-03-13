@@ -106,6 +106,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'mattn/sonictemplate-vim'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -186,6 +187,13 @@ let g:airline_right_sep=''
 let g:rainbow_active = 1
 
 " ----------------------------------------------------------------------------
+" sonictemplate-vim
+" ----------------------------------------------------------------------------
+let g:sonictemplate_vim_template_dir = [
+    \ '$HOME/.vim/template'
+\]
+
+" ----------------------------------------------------------------------------
 " vim-gitgutter
 " ----------------------------------------------------------------------------
 "let g:gitgutter_highlight_lines = 1
@@ -236,6 +244,7 @@ nmap <Leader>h <plug>(lsp-hover)
 " ----------------------------------------------------------------------------
 " vim-go
 " ----------------------------------------------------------------------------
+let g:go_template_autocreate = 0
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_methods = 1
