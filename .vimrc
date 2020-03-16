@@ -121,6 +121,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'mattn/emmet-vim'
+Plug 'gko/vim-coloresque'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'plasticboy/vim-markdown', { 'for': ['markdown', 'mkd'] }
