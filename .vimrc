@@ -92,7 +92,7 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
@@ -215,6 +215,17 @@ let g:gitgutter_sign_modified_removed = '.'
 " ----------------------------------------------------------------------------
 let g:webdevicons_enable_nerdtree = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+
+" NERDTrees File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+" 256 COLORS - CHEAT SHEET https://jonasjacek.github.io/colors/
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#000000')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#000000')
+call NERDTreeHighlightFile('py', '214', 'none', '#ffaf00', '#000000') " Orange1
 
 " ----------------------------------------------------------------------------
 " vim-lsp
