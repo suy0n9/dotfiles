@@ -223,9 +223,18 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
 endfunction
 
 " 256 COLORS - CHEAT SHEET https://jonasjacek.github.io/colors/
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#000000')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#000000')
 call NERDTreeHighlightFile('py', '214', 'none', '#ffaf00', '#000000') " Orange1
+call NERDTreeHighlightFile('go', '37', 'none', '#00afaf', '#000000') " LightSeaGreen
+call NERDTreeHighlightFile('sh', '103', 'none', '#8787af', '#000000') " LightSlateGrey
+call NERDTreeHighlightFile('md', '94', 'none', '#875f00', '#000000') " Orange4
+call NERDTreeHighlightFile('gitconfig', '160', 'none', '#d70000', '#000000') " Red3
+call NERDTreeHighlightFile('gitignore', '160', 'none', '#d70000', '#000000') " Red3
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#000000')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#000000')
+call NERDTreeHighlightFile('yaml', 'yellow', 'none', 'yellow', '#000000')
+call NERDTreeHighlightFile('xml', '208', 'none', '#ff8700', '#000000') " DarkOrange
+call NERDTreeHighlightFile('Dockerfile', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
+call NERDTreeHighlightFile('docker-compose.yml', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
 
 " ----------------------------------------------------------------------------
 " vim-lsp
