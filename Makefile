@@ -1,4 +1,4 @@
-EXCLUSIONS	:= .git .DS_Store .gitignore .config $(wildcard .*.swp)
+EXCLUSIONS	:= .git .DS_Store .gitignore .config .tmux $(wildcard .*.swp)
 CANDIDATES	:= $(wildcard .??*)
 DOTFILES	:= $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 

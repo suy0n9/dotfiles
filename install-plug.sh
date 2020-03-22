@@ -11,6 +11,3 @@ curl -fLo ~/.vim/colors/Tomorrow-Night-Bright.vim --create-dirs \
 # kube-tmux
 curl -fLo ~/.tmux/kube.tmux --create-dirs \
   https://raw.githubusercontent.com/jonmosco/kube-tmux/master/kube.tmux
-
-# tmux plug
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
