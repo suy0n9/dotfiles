@@ -9,8 +9,8 @@ PKGS=(
     golang.org/x/tools/cmd/goimports
     golang.org/x/tools/cmd/gorename
     golang.org/x/tools/cmd/guru
+    golang.org/x/tools/cmd/gopls
 
-    github.com/mdempsky/gocode
     github.com/rogpeppe/godef
 )
 

@@ -248,6 +248,36 @@ if executable('pyls')
         \ })
 endif
 
+if executable('gopls')
+  augroup LspGo
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'go-lang',
+        \ 'cmd': {server_info->['gopls']},
+        \ 'whitelist': ['go'],
+        \ 'workspace_config': {'gopls': {
+        \     'staticcheck': v:true,
+        \     'completeUnimported': v:true,
+        \     'caseSensitiveCompletion': v:true,
+        \     'usePlaceholders': v:true,
+        \     'completionDocumentation': v:true,
+        \     'watchFileChanges': v:true,
+        \     'hoverKind': 'SingleLine',
+        \   }},
+        \ })
+    autocmd FileType go setlocal omnifunc=lsp#complete
+  augroup END
+endif
+
+"if executable('gopls')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'gopls',
+"        \ 'cmd': {server_info->['gopls']},
+"        \ 'whitelist': ['go'],
+"        \ })
+"    autocmd BufWritePre *.go LspDocumentFormatSync
+"endif
+
 let g:lsp_diagnostics_enabled = 0       " disable diagnostics support
 
 " Mappings
