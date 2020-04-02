@@ -5,6 +5,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 
 brew "awscli"
+brew "bat"
 brew "cask"
 brew "colordiff"
 brew "coreutils"
