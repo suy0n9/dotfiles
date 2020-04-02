@@ -9,6 +9,7 @@ set history=50
 set virtualedit=block
 set whichwrap=b,s,[,],<,>
 set wildmenu
+set belloff=all
 
 "" Fix backspace indent
 set backspace=indent,eol,start
