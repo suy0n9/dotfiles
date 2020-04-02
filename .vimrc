@@ -23,9 +23,11 @@ set smartindent
 "" cursor
 set cursorline
 
-autocmd filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd filetype html       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 autocmd filetype javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd filetype sh  setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd filetype sh         setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd filetype yml        setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd filetype yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 autocmd BufRead,BufNewFile *.tsv setfiletype tsv
 autocmd filetype tsv  setlocal tabstop=4 noexpandtab
