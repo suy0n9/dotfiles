@@ -164,3 +164,5 @@ aws-current () {
 if (which zprof > /dev/null 2>&1) ;then
       zprof | less
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
