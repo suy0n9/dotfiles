@@ -60,6 +60,9 @@ export SAVEHIST=100000
 export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
 
+# setting fo python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # direnv
 eval "$(direnv hook zsh)"
 
