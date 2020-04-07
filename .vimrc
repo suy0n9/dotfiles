@@ -240,7 +240,6 @@ call NERDTreeHighlightFile('gitignore', '160', 'none', '#d70000', '#000000') " R
 call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#000000')
 call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#000000')
 call NERDTreeHighlightFile('yaml', 'yellow', 'none', 'yellow', '#000000')
-call NERDTreeHighlightFile('xml', '208', 'none', '#ff8700', '#000000') " DarkOrange
 call NERDTreeHighlightFile('Dockerfile', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
 call NERDTreeHighlightFile('docker-compose.yml', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
 
