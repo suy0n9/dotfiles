@@ -18,6 +18,7 @@
     see = browse
 
 [ghq]
+    root = ~/work
     root = ~/dev/src
 
 [include]
