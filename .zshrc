@@ -166,7 +166,12 @@ aws-current () {
     echo "${AWS_PROFILE}"
 }
 
+# ls commit date
+ls-commit() {
+    git ls-files $1 | xargs -I{} bash -c 'git log -1 --format="%ai {}" {}'
+}
+
 # Use zprof
 if (which zprof > /dev/null 2>&1) ;then
-      zprof | less
+    zprof | less
 fi
