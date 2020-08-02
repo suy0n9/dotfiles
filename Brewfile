@@ -6,6 +6,7 @@ tap "homebrew/core"
 
 brew "awscli"
 brew "bat"
+brew "blueutil"
 brew "cask"
 brew "colordiff"
 brew "coreutils"
