@@ -262,6 +262,12 @@ call NERDTreeHighlightFile('yaml', 'yellow', 'none', 'yellow', '#000000')
 call NERDTreeHighlightFile('Dockerfile', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
 call NERDTreeHighlightFile('docker-compose.yml', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
 
+" after a re-source, fix syntax matching issues (concealing brackets):
+" https://github.com/ryanoasis/vim-devicons/issues/154#issuecomment-222032236
+if exists("g:loaded_webdevicons")
+      call webdevicons#refresh()
+endif
+
 " ----------------------------------------------------------------------------
 " vim-lsp
 " ----------------------------------------------------------------------------
