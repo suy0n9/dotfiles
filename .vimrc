@@ -33,6 +33,9 @@ autocmd filetype yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 autocmd BufRead,BufNewFile *.tsv setfiletype tsv
 autocmd filetype tsv  setlocal tabstop=4 noexpandtab
 
+" Turn off paste mode when leaving insert
+autocmd InsertLeave * set nopaste
+
 "Automatically removing trailing whitespace
 fun! StripTrailingWhiteSpace()
     " don't strip on these filetypes
