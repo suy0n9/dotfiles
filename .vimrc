@@ -264,7 +264,7 @@ if executable('gopls')
         \ 'workspace_config': {'gopls': {
         \     'staticcheck': v:true,
         \     'completeUnimported': v:true,
-        \     'caseSensitiveCompletion': v:true,
+        \     'caseSensitiveCompletion': v:false,
         \     'usePlaceholders': v:true,
         \     'completionDocumentation': v:true,
         \     'watchFileChanges': v:true,
