@@ -8,6 +8,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 curl -fLo ~/.vim/colors/Tomorrow-Night-Bright.vim --create-dirs \
   https://raw.githubusercontent.com/chriskempson/vim-tomorrow-theme/master/colors/Tomorrow-Night-Bright.vim
 
+# Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # kube-tmux
 curl -fLo ~/.tmux/kube.tmux --create-dirs \
   https://raw.githubusercontent.com/jonmosco/kube-tmux/master/kube.tmux

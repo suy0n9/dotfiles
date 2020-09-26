@@ -63,7 +63,7 @@ fssh() {
 
 # awx - switch to the selected aws profile
 awx() {
-    local prof=$(cat ~/.aws/config | awk '/\[.+\]/ { print $2 }'| tr -d "]" | fzf)
+    local prof=$(cat ~/.aws/config | awk '/\[.+\]/ {print $NF}'| tr -d "[]" | fzf)
     if [ -z "$prof" ]; then
         return 1
     fi

@@ -33,6 +33,9 @@ autocmd filetype yaml       setlocal shiftwidth=2 softtabstop=2 tabstop=2 expand
 autocmd BufRead,BufNewFile *.tsv setfiletype tsv
 autocmd filetype tsv  setlocal tabstop=4 noexpandtab
 
+" Turn off paste mode when leaving insert
+autocmd InsertLeave * set nopaste
+
 "Automatically removing trailing whitespace
 fun! StripTrailingWhiteSpace()
     " don't strip on these filetypes
@@ -152,6 +155,25 @@ let g:fzf_layout = { 'down': '20%' }
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
+" Delete buffer command
+" https://github.com/junegunn/fzf.vim/pull/733#issuecomment-559720813
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+    \ 'source': s:list_buffers(),
+    \ 'sink*': { lines -> s:delete_buffers(lines) },
+    \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
+
 " ----------------------------------------------------------------------------
 " ack.vim
 " ----------------------------------------------------------------------------
@@ -242,6 +264,12 @@ call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#000000')
 call NERDTreeHighlightFile('yaml', 'yellow', 'none', 'yellow', '#000000')
 call NERDTreeHighlightFile('Dockerfile', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
 call NERDTreeHighlightFile('docker-compose.yml', '39', 'none', '#00afff', '#000000') " DeepSkyBlue1
+
+" after a re-source, fix syntax matching issues (concealing brackets):
+" https://github.com/ryanoasis/vim-devicons/issues/154#issuecomment-222032236
+if exists("g:loaded_webdevicons")
+      call webdevicons#refresh()
+endif
 
 " ----------------------------------------------------------------------------
 " vim-lsp
