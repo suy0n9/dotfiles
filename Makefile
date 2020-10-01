@@ -14,10 +14,10 @@ deploy: ## Deploy dotfiles
 install: ## Install Homebrew packages, other setup
 	$(info ********  Install packages. ********)
 	@bash install-brew.sh
-	@bash install-go.sh
 	@bash install-plug.sh
+	@bash install-go.sh
 
-init: deploy install ## Run make deploy, make install
+init: install deploy ## Run make install, make deploy
 
 clean: ## Remove dotfiles
 	$(info ********  Remove dotfiles from home directory. ********)
