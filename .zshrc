@@ -175,3 +175,9 @@ ls-commit() {
 if (which zprof > /dev/null 2>&1) ;then
     zprof | less
 fi
+
+# git worktree add command
+gwkt() {
+    GIT_CDUP_DIR=`git rev-parse --show-cdup`
+    git worktree add ${GIT_CDUP_DIR}git-worktrees/$1 -b $1
+}

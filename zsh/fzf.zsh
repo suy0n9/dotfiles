@@ -48,6 +48,25 @@ fbr() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
+# cd git worktree
+cdwkt() {
+    # Check if the current directory is a git repository
+    git rev-parse &>/dev/null
+    if [ $? -ne 0 ]; then
+        echo fatal: Not a git repository.
+        return
+    fi
+
+    local selectedWorkTreeDir=`git worktree list | fzf | awk '{print $1}'`
+
+    if [ "$selectedWorkTreeDir" = "" ]; then
+        # Ctrl-C.
+        return
+    fi
+
+    cd ${selectedWorkTreeDir}
+}
+
 # fssh - ssh to the selected host
 fssh() {
     local sshLoginHost

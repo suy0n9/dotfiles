@@ -6,3 +6,6 @@
 
 # direnv
 .envrc
+
+# git
+git-worktrees/*
