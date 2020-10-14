@@ -39,6 +39,7 @@ brew "tree"
 brew "vim"
 brew "watch"
 brew "wget"
+brew "zoxide"
 brew "zplug"
 brew "zsh"
 

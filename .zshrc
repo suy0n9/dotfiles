@@ -69,6 +69,8 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # direnv
 eval "$(direnv hook zsh)"
 
+# zoxide
+eval "$(zoxide init zsh)"
 # --------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------
