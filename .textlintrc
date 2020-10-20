@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "textlint-rule-ja-no-abusage": true,
+        "textlint-rule-no-dropping-the-ra": true,
+        "textlint-rule-preset-ja-technical-writing": true,
+        "textlint-rule-spellcheck-tech-word": true
+    }
+}
