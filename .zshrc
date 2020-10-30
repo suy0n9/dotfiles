@@ -66,6 +66,9 @@ export PATH=$PATH:$GOPATH/bin
 # setting fo python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+# gnu sed
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
 # direnv
 eval "$(direnv hook zsh)"
 
