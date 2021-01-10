@@ -9,6 +9,7 @@
                 "allowPeriodMarks": ["．"]
             }
         },
-        "textlint-rule-spellcheck-tech-word": true
+        "textlint-rule-spellcheck-tech-word": true,
+        "no-exclamation-question-mark": false
     }
 }
