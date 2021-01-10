@@ -7,9 +7,9 @@
             },
             "ja-no-mixed-period": {
                 "allowPeriodMarks": ["．"]
-            }
+            },
+            "no-exclamation-question-mark": false
         },
-        "textlint-rule-spellcheck-tech-word": true,
-        "no-exclamation-question-mark": false
+        "textlint-rule-spellcheck-tech-word": true
     }
 }
