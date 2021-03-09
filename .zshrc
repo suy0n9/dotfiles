@@ -6,7 +6,6 @@ if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
     zcompile ~/.zshrc
 fi
 
-fpath=(/usr/local/share/zsh/site-functions $fpath)
 for f (~/dev/src/github.com/suy0n9/dotfiles/zsh/*.zsh) source "${f}"
 
 # local config
@@ -20,7 +19,7 @@ fi
 # --------------------------------------------------------------------
 # Completion
 # --------------------------------------------------------------------
-# Initialization
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
     compinit
@@ -43,12 +42,9 @@ zstyle :prompt:pure:path color cyan
 # --------------------------------------------------------------------
 # Environment variables
 # --------------------------------------------------------------------
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 
 # Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
@@ -64,10 +60,10 @@ export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
 
 # setting fo python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 
 # gnu sed
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
