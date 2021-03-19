@@ -228,6 +228,7 @@ let g:sonictemplate_vim_template_dir = [
 " scratch.vim
 " ----------------------------------------------------------------------------
 let g:scratch_filetype = 'markdown'
+let g:scratch_autohide = 0
 
 " ----------------------------------------------------------------------------
 " vim-gitgutter
