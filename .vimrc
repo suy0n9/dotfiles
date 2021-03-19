@@ -113,6 +113,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/sonictemplate-vim'
+Plug 'mtth/scratch.vim'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -222,6 +223,11 @@ let g:rainbow_active = 1
 let g:sonictemplate_vim_template_dir = [
     \ '$HOME/.vim/template'
 \]
+
+" ----------------------------------------------------------------------------
+" scratch.vim
+" ----------------------------------------------------------------------------
+let g:scratch_filetype = 'markdown'
 
 " ----------------------------------------------------------------------------
 " vim-gitgutter
