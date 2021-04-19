@@ -1,7 +1,7 @@
 {
     "rules": {
-        "textlint-rule-ja-no-abusage": true,
         "preset-ja-technical-writing": {
+            "ja-no-abusage": true,
             "sentence-length": {
                 max: 140
             },
