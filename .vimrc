@@ -114,6 +114,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/sonictemplate-vim'
 Plug 'mtth/scratch.vim'
+Plug 'dhruvasagar/vim-table-mode'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -384,6 +385,11 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 " Highlight YAML front matter as used by Jekyll or Hugo.
 let g:vim_markdown_frontmatter = 1
+
+" ----------------------------------------------------------------------------
+" vim-table-mode
+" ----------------------------------------------------------------------------
+let g:table_mode_corner='|'
 
 " ----------------------------------------------------------------------------
 " vim-terraform
