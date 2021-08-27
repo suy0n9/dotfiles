@@ -115,6 +115,7 @@ Plug 'tpope/vim-repeat'
 Plug 'mattn/sonictemplate-vim'
 Plug 'mtth/scratch.vim'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'simeji/winresizer'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -395,6 +396,12 @@ let g:table_mode_corner='|'
 " vim-terraform
 " ----------------------------------------------------------------------------
 let g:terraform_fmt_on_save = 1
+
+" ----------------------------------------------------------------------------
+" winresizer
+" ----------------------------------------------------------------------------
+let g:winresizer_vert_resize = 1
+let g:winresizer_horiz_resize = 1
 
 " ----------------------------------------------------------------------------
 " ALE
