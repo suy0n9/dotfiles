@@ -140,6 +140,7 @@ Plug 'hashivim/vim-terraform', { 'for': 'tf' }
 
 " Lint
 Plug 'w0rp/ale'
+Plug 'editorconfig/editorconfig-vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
