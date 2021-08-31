@@ -21,7 +21,7 @@ fi
 # --------------------------------------------------------------------
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
     compinit
 else
     compinit -C
@@ -42,6 +42,8 @@ zstyle :prompt:pure:path color cyan
 # --------------------------------------------------------------------
 # Environment variables
 # --------------------------------------------------------------------
+typeset -U path fpath manpath
+
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
@@ -55,15 +57,30 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
 
+path=(
+    $(brew --prefix)/opt/coreutils/libexec/gnubin(N-/) # coreutils
+    $(brew --prefix)/opt/findutils/libexec/gnubin(N-/) # findutils
+    $(brew --prefix)/opt/gnu-sed/libexec/gnubin(N-/) # sed
+    $(brew --prefix)/opt/gnu-tar/libexec/gnubin(N-/) # tar
+    $(brew --prefix)/opt/grep/libexec/gnubin(N-/) # grep
+    $path
+)
+
+manpath=(
+    $(brew --prefix)/opt/coreutils/libexec/gnuman(N-/) # coreutils
+    $(brew --prefix)/opt/findutils/libexec/gnuman(N-/) # findutils
+    $(brew --prefix)/opt/gnu-sed/libexec/gnuman(N-/) # sed
+    $(brew --prefix)/opt/gnu-tar/libexec/gnuman(N-/) # tar
+    $(brew --prefix)/opt/grep/libexec/gnuman(N-/) # grep
+    $manpath
+)
+
 # setting for go
 export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
 
 # setting fo python
 export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
-
-# gnu sed
-export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
