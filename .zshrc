@@ -16,10 +16,15 @@ fi
 # enable fuzzy auto-completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+if [[ "$(uname -m)" == arm64 ]]; then
+    BREW_PREFIX=/opt/homebrew
+elif [[ "$(uname -m)" == x86_64 ]]; then
+    BREW_PREFIX=/usr/local
+fi
 # --------------------------------------------------------------------
 # Completion
 # --------------------------------------------------------------------
-FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+FPATH=$BREW_PREFIX/share/zsh/site-functions:$FPATH
 autoload -Uz compinit
 if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
     compinit
@@ -46,7 +51,7 @@ typeset -U path fpath manpath
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+export ZPLUG_HOME=$BREW_PREFIX/opt/zplug
 
 # Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
@@ -58,20 +63,20 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 
 path=(
-    $(brew --prefix)/opt/coreutils/libexec/gnubin(N-/) # coreutils
-    $(brew --prefix)/opt/findutils/libexec/gnubin(N-/) # findutils
-    $(brew --prefix)/opt/gnu-sed/libexec/gnubin(N-/) # sed
-    $(brew --prefix)/opt/gnu-tar/libexec/gnubin(N-/) # tar
-    $(brew --prefix)/opt/grep/libexec/gnubin(N-/) # grep
+    $BREW_PREFIX/opt/coreutils/libexec/gnubin(N-/) # coreutils
+    $BREW_PREFIX/opt/findutils/libexec/gnubin(N-/) # findutils
+    $BREW_PREFIX/opt/gnu-sed/libexec/gnubin(N-/) # sed
+    $BREW_PREFIX/opt/gnu-tar/libexec/gnubin(N-/) # tar
+    $BREW_PREFIX/opt/grep/libexec/gnubin(N-/) # grep
     $path
 )
 
 manpath=(
-    $(brew --prefix)/opt/coreutils/libexec/gnuman(N-/) # coreutils
-    $(brew --prefix)/opt/findutils/libexec/gnuman(N-/) # findutils
-    $(brew --prefix)/opt/gnu-sed/libexec/gnuman(N-/) # sed
-    $(brew --prefix)/opt/gnu-tar/libexec/gnuman(N-/) # tar
-    $(brew --prefix)/opt/grep/libexec/gnuman(N-/) # grep
+    $BREW_PREFIX/opt/coreutils/libexec/gnuman(N-/) # coreutils
+    $BREW_PREFIX/opt/findutils/libexec/gnuman(N-/) # findutils
+    $BREW_PREFIX/opt/gnu-sed/libexec/gnuman(N-/) # sed
+    $BREW_PREFIX/opt/gnu-tar/libexec/gnuman(N-/) # tar
+    $BREW_PREFIX/opt/grep/libexec/gnuman(N-/) # grep
     $manpath
 )
 
@@ -80,7 +85,7 @@ export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
 
 # setting fo python
-export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
