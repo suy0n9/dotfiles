@@ -6,7 +6,7 @@
                 max: 140
             },
             "ja-no-mixed-period": {
-                "allowPeriodMarks": ["．"]
+                "allowPeriodMarks": ["．", "."]
             },
             "no-exclamation-question-mark": false
         },
