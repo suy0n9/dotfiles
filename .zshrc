@@ -86,6 +86,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # setting fo python
 export PATH="$BREW_PREFIX/opt/python/libexec/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
