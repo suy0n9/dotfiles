@@ -64,6 +64,8 @@ path=(
     $BREW_PREFIX/opt/gnu-sed/libexec/gnubin(N-/) # sed
     $BREW_PREFIX/opt/gnu-tar/libexec/gnubin(N-/) # tar
     $BREW_PREFIX/opt/grep/libexec/gnubin(N-/) # grep
+    $GOPATH/bin(N-/) # go
+    $HOME/.poetry/bin(N-/) # python
     $path
 )
 
@@ -78,10 +80,6 @@ manpath=(
 
 # setting for go
 export GOPATH=$HOME/dev
-export PATH=$PATH:$GOPATH/bin
-
-# setting fo python
-export PATH="$HOME/.poetry/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
