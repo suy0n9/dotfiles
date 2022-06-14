@@ -57,10 +57,6 @@ export ZPLUG_HOME=$BREW_PREFIX/opt/zplug
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 export LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
-# history
-export HISTFILE=$HOME/.zsh_history
-export HISTSIZE=100000
-export SAVEHIST=100000
 
 path=(
     $BREW_PREFIX/opt/coreutils/libexec/gnubin(N-/) # coreutils
@@ -97,6 +93,31 @@ eval "$(zoxide init zsh)"
 . $BREW_PREFIX/opt/asdf/libexec/asdf.sh
 
 # --------------------------------------------------------------------
+# History
+# --------------------------------------------------------------------
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
+setopt hist_ignore_all_dups  # Remove old command from list if history list command is duplicated
+setopt hist_ignore_dups # Ignore duplicate history
+setopt hist_ignore_space # Remove from history list if starting from space
+setopt hist_reduce_blanks # Remove extra blanks from each command line being added to the history list.
+setopt share_history # Share history
+
+# https://mollifier.hatenablog.com/entry/20090728/p1
+zshaddhistory() {
+    local line=${1%%$'\n'}
+    local cmd=${line%% *}
+
+    [[ ${#line} -ge 5
+        && ${cmd} != (l[sal])
+        && ${cmd} != (cd)
+        && ${cmd} != (man)
+    ]]
+}
+
+# --------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------
 # Enable display of Japanese file name
@@ -105,20 +126,6 @@ setopt print_eight_bit
 # Make cd push the old directory onto the directory stack. 'cd -<TAB>'
 setopt auto_pushd
 
-# Share history
-setopt share_history
-
-# Remove old command from list if history list command is duplicated
-setopt hist_ignore_all_dups
-
-# Ignore duplicate history
-setopt hist_ignore_dups
-
-# Remove from history list if starting from space
-setopt hist_ignore_space
-
-# Remove extra blanks from each command line being added to the history list.
-setopt hist_reduce_blanks
 
 setopt nonomatch
 
