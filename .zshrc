@@ -51,7 +51,6 @@ typeset -U path fpath manpath
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export ZPLUG_HOME=$BREW_PREFIX/opt/zplug
 
 # Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
@@ -181,15 +180,19 @@ bindkey '^r' peco-select-history
 # --------------------------------------------------------------------
 # Plugin
 # --------------------------------------------------------------------
-source $ZPLUG_HOME/init.zsh
+source $BREW_PREFIX/opt/zinit/zinit.zsh
 
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:"pure.zsh", from:github, as:theme
+# Load pure theme
+zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+zinit light sindresorhus/pure
 
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug load
+zinit wait lucid blockf light-mode for \
+        zsh-users/zsh-autosuggestions \
+        zsh-users/zsh-completions
+
+zinit wait lucid light-mode for \
+        zdharma-continuum/fast-syntax-highlighting \
+        zsh-users/zsh-history-substring-search
 
 # other
 # --------------------------------------------------------------------
