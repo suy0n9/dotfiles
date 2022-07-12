@@ -80,15 +80,6 @@ manpath=(
 # setting for go
 export GOPATH=$HOME/dev
 
-# direnv
-eval "$(direnv hook zsh)"
-
-# zoxide
-eval "$(zoxide init zsh)"
-
-# asdf
-. $BREW_PREFIX/opt/asdf/libexec/asdf.sh
-
 # --------------------------------------------------------------------
 # History
 # --------------------------------------------------------------------
@@ -196,6 +187,15 @@ zinit wait lucid light-mode for \
 
 # other
 # --------------------------------------------------------------------
+# direnv
+eval "$(direnv hook zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# asdf
+. $BREW_PREFIX/opt/asdf/libexec/asdf.sh
+
 # aws-current - print current aws profile
 aws-current () {
     echo "${AWS_PROFILE}"
