@@ -165,8 +165,8 @@ alias vv='vim ~/.vimrc'
 # like a emacs bind
 bindkey -e
 
-bindkey '^]' peco-src
-bindkey '^r' peco-select-history
+bindkey '^]' fzf-ghq
+bindkey '^r' fzf-select-history
 
 # --------------------------------------------------------------------
 # Plugin
