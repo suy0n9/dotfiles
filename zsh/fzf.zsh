@@ -37,7 +37,7 @@ zle -N fzf-ghq
 
 # fzf history
 function fzf-select-history() {
-  BUFFER=$(\history -n -r 1 | fzf-tmux -p -w80% --exact --query "$LBUFFER")
+  BUFFER=$(history -n -r 1 | fzf-tmux -p -w80% --exact --no-sort --query "$LBUFFER")
   CURSOR=$#BUFFER
   zle reset-prompt
 }
@@ -119,7 +119,10 @@ cdwkt() {
 # fssh - ssh to the selected host
 fssh() {
     local sshLoginHost
-    sshLoginHost=$(cat ~/.ssh/config | grep -i ^host | grep -v '*' | awk '{print $2}' | fzf)
+    sshLoginHost=$(cat ~/.ssh/config | grep -i ^host | grep -v '*' | awk '{print $2}' \
+        |fzf \
+        --preview 'batgrep {} ~/.ssh/config'
+    )
 
     if [ -z "$sshLoginHost" ]; then
         return 1
