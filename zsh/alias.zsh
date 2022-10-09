@@ -1,3 +1,41 @@
+# diff
+if [[ -x `which colordiff` ]]; then
+    alias diff='colordiff -u'
+else
+    alias diff='diff -u'
+fi
+
+# go
+alias gore='gore -autoimport'
+
+# ghq
+alias src='cd $(ghq root)'
+
+# ls
+alias ls='ls -GF'
+alias ll='ls -l'
+alias la='ls -la'
+alias lt='ls -ltr'
+
+# k8s
+alias k='kubectl'
+alias kg='kubectl get'
+alias kd='kubectl describe'
+alias kx='kubectx'
+alias kn='kubens'
+
+# list and select k8s pods with fzf
+# e.g.
+#   kubectl exec -it P bash
+alias -g P='$(kubectl get po | fzf | awk "{print \$1}")'
+
+alias lg='lazygit'
+
+alias sss='source ~/.zshrc'
+alias vz='vim ~/.zshrc'
+alias vv='vim ~/.vimrc'
+
+# http status
 alias "100"="echo 'Continue'"
 alias "101"="echo 'Switching Protocols'"
 alias "200"="echo 'OK'"
