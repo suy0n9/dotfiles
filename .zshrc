@@ -25,6 +25,7 @@ fi
 # Completion
 # --------------------------------------------------------------------
 FPATH=$BREW_PREFIX/share/zsh/site-functions:$FPATH
+autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit
 if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
     compinit
@@ -153,21 +154,8 @@ eval "$(zoxide init zsh)"
 # asdf
 . $BREW_PREFIX/opt/asdf/libexec/asdf.sh
 
-# aws-current - print current aws profile
-aws-current () {
-    echo "${AWS_PROFILE}"
-}
-
-# ls commit date
-ls-commit() {
-    git ls-files $1 | xargs -I{} bash -c 'git log -1 --format="%ai {}" {}'
-}
-
-# git worktree add command
-gwkt() {
-    GIT_CDUP_DIR=`git rev-parse --show-cdup`
-    git worktree add ${GIT_CDUP_DIR}git-worktrees/$1 -b $1
-}
+# terraform
+complete -o nospace -C $HOME/.asdf/installs/terraform/1.2.2/bin/terraform terraform
 
 # Use zprof
 if (which zprof > /dev/null 2>&1) ;then
