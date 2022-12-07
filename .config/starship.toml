@@ -1,0 +1,17 @@
+[hostname]
+ssh_only = false
+format = "[$hostname](bold white) "
+disabled = false
+
+[directory]
+truncation_length = 10
+truncate_to_repo = false
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style)"

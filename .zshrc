@@ -131,9 +131,9 @@ bindkey '^r' fzf-select-history
 # --------------------------------------------------------------------
 source $BREW_PREFIX/opt/zinit/zinit.zsh
 
-# Load pure theme
-zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
-zinit light sindresorhus/pure
+# # Load pure theme
+# zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+# zinit light sindresorhus/pure
 
 zinit wait lucid blockf light-mode for \
         zsh-users/zsh-autosuggestions \
@@ -145,6 +145,9 @@ zinit wait lucid light-mode for \
 
 # other
 # --------------------------------------------------------------------
+# starship
+eval "$(starship init zsh)"
+
 # direnv
 eval "$(direnv hook zsh)"
 
