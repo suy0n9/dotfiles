@@ -81,6 +81,9 @@ manpath=(
 # setting for go
 export GOPATH=$HOME/dev
 
+# setting for homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # --------------------------------------------------------------------
 # History
 # --------------------------------------------------------------------
