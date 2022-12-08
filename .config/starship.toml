@@ -1,6 +1,6 @@
 [hostname]
 ssh_only = false
-format = "[$hostname](bold white) "
+format = "[$hostname](bold gray) "
 disabled = false
 
 [directory]
@@ -14,4 +14,8 @@ disabled = true
 disabled = true
 
 [git_branch]
-format = "[$symbol$branch(:$remote_branch)]($style)"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "gray"
+
+[terraform]
+format = "via [$symbol$version $workspace]($style) "
