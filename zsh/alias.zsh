@@ -11,11 +11,21 @@ alias gore='gore -autoimport'
 # ghq
 alias src='cd $(ghq root)'
 
-# ls
-alias ls='ls -GF'
-alias ll='ls -l'
-alias la='ls -la'
-alias lt='ls -ltr'
+ls
+if [[ -x `which exa` ]]; then
+    alias ls='exa --icons'
+    alias ll='exa -l --icons'
+    alias la='exa -la --icons'
+else
+    alias ls='ls -GF'
+    alias ll='ls -l'
+    alias la='ls -la'
+    alias lt='ls -ltr'
+fi
+# alias ls='ls -GF'
+# alias ll='ls -l'
+# alias la='ls -la'
+# alias lt='ls -ltr'
 
 # k8s
 alias k='kubectl'
