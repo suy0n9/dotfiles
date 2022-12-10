@@ -4,6 +4,7 @@ format = "[$hostname](bold gray) "
 disabled = false
 
 [directory]
+read_only = " "
 truncation_length = 10
 truncate_to_repo = false
 
@@ -14,8 +15,30 @@ disabled = true
 disabled = true
 
 [git_branch]
+symbol = " "
 format = "[$symbol$branch(:$remote_branch)]($style) "
 style = "gray"
 
 [terraform]
 format = "via [$symbol$version $workspace]($style) "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[java]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[memory_usage]
+symbol = " "
