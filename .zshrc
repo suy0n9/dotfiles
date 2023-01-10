@@ -65,7 +65,7 @@ path=(
     $BREW_PREFIX/opt/gnu-tar/libexec/gnubin(N-/) # tar
     $BREW_PREFIX/opt/grep/libexec/gnubin(N-/) # grep
     $GOPATH/bin(N-/) # go
-    $HOME/.poetry/bin(N-/) # python
+    $HOME/.local/bin(N-/) # poetry
     $path
 )
 
