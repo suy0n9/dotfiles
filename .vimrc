@@ -128,7 +128,6 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'mattn/emmet-vim'
 Plug 'gko/vim-coloresque'
@@ -285,47 +284,6 @@ endif
 " ----------------------------------------------------------------------------
 " vim-lsp
 " ----------------------------------------------------------------------------
-if executable('bash-language-server')
-  augroup LspBash
-    autocmd!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'bash-language-server',
-          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
-          \ 'allowlist': ['sh'],
-          \ })
-  augroup END
-endif
-
-if executable('gopls')
-  augroup LspGo
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'go-lang',
-        \ 'cmd': {server_info->['gopls']},
-        \ 'whitelist': ['go'],
-        \ 'workspace_config': {'gopls': {
-        \     'staticcheck': v:true,
-        \     'completeUnimported': v:true,
-        \     'caseSensitiveCompletion': v:false,
-        \     'usePlaceholders': v:true,
-        \     'completionDocumentation': v:true,
-        \     'watchFileChanges': v:true,
-        \     'hoverKind': 'SingleLine',
-        \   }},
-        \ })
-    autocmd FileType go setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-"if executable('gopls')
-"    au User lsp_setup call lsp#register_server({
-"        \ 'name': 'gopls',
-"        \ 'cmd': {server_info->['gopls']},
-"        \ 'whitelist': ['go'],
-"        \ })
-"    autocmd BufWritePre *.go LspDocumentFormatSync
-"endif
-
 let g:lsp_diagnostics_enabled = 0       " disable diagnostics support
 
 " Mappings
@@ -339,18 +297,6 @@ nmap <Leader>h <plug>(lsp-hover)
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')
 " let g:asyncomplete_log_file = expand('~/asyncomplete.log')
-
-" ----------------------------------------------------------------------------
-" vim-go
-" ----------------------------------------------------------------------------
-let g:go_template_autocreate = 0
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_fmt_command = "goimports"
 
 " ----------------------------------------------------------------------------
 " vim-json
@@ -402,6 +348,7 @@ let g:winresizer_horiz_resize = 1
 " ----------------------------------------------------------------------------
 let g:ale_fixers = {
             \ 'python': ['black', 'isort'],
+            \ 'go': ['gofmt'],
             \}
 let g:ale_fix_on_save = 1
 
