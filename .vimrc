@@ -284,6 +284,9 @@ endif
 " ----------------------------------------------------------------------------
 " vim-lsp
 " ----------------------------------------------------------------------------
+
+autocmd BufWritePre *.go call execute(['LspCodeActionSync source.organizeImports', 'LspDocumentFormatSync'])
+
 let g:lsp_diagnostics_enabled = 0       " disable diagnostics support
 
 " Mappings
@@ -348,7 +351,6 @@ let g:winresizer_horiz_resize = 1
 " ----------------------------------------------------------------------------
 let g:ale_fixers = {
             \ 'python': ['black', 'isort'],
-            \ 'go': ['gofmt'],
             \}
 let g:ale_fix_on_save = 1
 
