@@ -201,6 +201,17 @@ let g:indentLine_concealcursor = ''
 " ----------------------------------------------------------------------------
 " fern
 " ----------------------------------------------------------------------------
+
+" customize fern buffer
+function! s:init_fern() abort
+    nmap <buffer> i <Plug>(fern-action-open:split)
+    nmap <buffer> s <Plug>(fern-action-open:vsplit)
+endfunction
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+
 let g:fern#default_hidden=1
 let g:fern#renderer = 'nerdfont'
 
