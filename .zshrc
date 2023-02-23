@@ -57,14 +57,12 @@ export EDITOR=vim
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 export LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
-
 path=(
     $BREW_PREFIX/opt/coreutils/libexec/gnubin(N-/) # coreutils
     $BREW_PREFIX/opt/findutils/libexec/gnubin(N-/) # findutils
     $BREW_PREFIX/opt/gnu-sed/libexec/gnubin(N-/) # sed
     $BREW_PREFIX/opt/gnu-tar/libexec/gnubin(N-/) # tar
     $BREW_PREFIX/opt/grep/libexec/gnubin(N-/) # grep
-    $GOPATH/bin(N-/) # go
     $HOME/.local/bin(N-/) # poetry
     $path
 )
@@ -77,9 +75,6 @@ manpath=(
     $BREW_PREFIX/opt/grep/libexec/gnuman(N-/) # grep
     $manpath
 )
-
-# setting for go
-export GOPATH=$HOME/dev
 
 # setting for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
