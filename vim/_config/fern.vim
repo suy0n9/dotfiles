@@ -18,8 +18,8 @@ let g:fern#renderer = 'nerdfont'
 
 " https://github.com/lambdalisue/fern.vim/issues/233#issuecomment-743101883
 " Add dirs and files inside the brackets that need to remain hidden
-let hide_dirs  = '^\%(\.git\|node_modules\)$'  " here you write the dir names
-let hide_files = '\%(\.swp\)\+'                " here you write the file names
+let hide_dirs  = '^\%(\.git\|node_modules\)$'   " here you write the dir names
+let hide_files = '\%(\.DS_Store\|\.swp\)\+'     " here you write the file names
 let g:fern#default_exclude = hide_dirs . '\|' . hide_files  " here you exclude them
 
 " fern-preview.vim
