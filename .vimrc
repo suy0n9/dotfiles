@@ -117,12 +117,8 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " lang
-Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'mattn/emmet-vim'
 Plug 'gko/vim-coloresque'
-Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-Plug 'plasticboy/vim-markdown', { 'for': ['markdown', 'mkd'] }
 Plug 'kannokanno/previm', { 'for': ['markdown', 'mkd'] }
 Plug 'tyru/open-browser.vim', { 'for': ['markdown', 'mkd'] }
 Plug 'hashivim/vim-terraform', { 'for': 'tf' }
