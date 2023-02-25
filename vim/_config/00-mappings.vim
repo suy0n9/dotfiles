@@ -9,3 +9,6 @@ nnoremap <silent> <C-n> :<C-u>cnext<CR>
 " Buffer
 nnoremap <silent> <Space>p :bprevious<CR>
 nnoremap <silent> <Space>n :bnext<CR>
+
+" tig
+nnoremap <silent> ,t :vert term ++close tig<CR>
