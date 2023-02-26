@@ -13,3 +13,6 @@ let g:gitgutter_sign_modified = '.'
 let g:gitgutter_sign_removed = '.'
 let g:gitgutter_sign_removed_first_line = '.'
 let g:gitgutter_sign_modified_removed = '.'
+
+" https://github.com/airblade/vim-gitgutter#when-signs-dont-update-after-focusing-vim
+let g:gitgutter_terminal_reports_focus=0
