@@ -18,3 +18,8 @@ fi
 if [ ! -d ${HOME}/.vim/_config ]; then
   ln -sfv ${BASE}/vim/_config ${HOME}/.vim/_config
 fi
+
+if [ ! -f ${HOME}/.config/lazygit/config.yml ]; then
+  mkdir -p ${HOME}/.config/lazygit
+  ln -sfv ${BASE}/.config/lazygit/config.yml ${HOME}/.config/lazygit/config.yml
+fi
