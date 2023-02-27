@@ -9,13 +9,13 @@ all:
 deploy: ## Deploy dotfiles
 	$(info ********  Create symlink of dotfiles to home directory. ********)
 	@$(foreach f, $(DOTFILES), ln -snfv $(abspath $(f)) $(HOME)/$(f);)
-	@bash deploy-config.sh
+	@bash scripts/deploy-config.sh
 
 install: ## Install Homebrew packages, other setup
 	$(info ********  Install packages. ********)
-	@bash install-brew.sh
-	@bash install-plug.sh
-	@bash install-go.sh
+	@bash scripts/install-brew.sh
+	@bash scripts/install-plug.sh
+	@bash scripts/install-go.sh
 
 init: install deploy ## Run make install, make deploy
 

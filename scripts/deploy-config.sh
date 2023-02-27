@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE=$(cd $(dirname ${0}) && pwd)
+BASE=$(cd $(dirname ${0})/.. && pwd)
 
 if [ ! -f ${HOME}/.config/peco/config.json ]; then
   mkdir -p ${HOME}/.config/peco
