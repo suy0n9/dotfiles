@@ -23,3 +23,7 @@ if [ ! -f ${HOME}/.config/lazygit/config.yml ]; then
   mkdir -p ${HOME}/.config/lazygit
   ln -sfv ${BASE}/.config/lazygit/config.yml ${HOME}/.config/lazygit/config.yml
 fi
+
+if [ ! -d ${XDG_CONFIG_HOME}/git ]; then
+  ln -sfv ${BASE}/.config/git ${XDG_CONFIG_HOME}/git
+fi

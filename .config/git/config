@@ -3,7 +3,6 @@
     email = suy01v9@gmail.com
 
 [core]
-    excludesfile = ~/.gitignore_global
     autocrlf = input
     whitespace = cr-at-eol
     pager = delta
