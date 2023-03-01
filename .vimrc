@@ -121,6 +121,7 @@ Plug 'mattn/emmet-vim'
 Plug 'gko/vim-coloresque'
 Plug 'kannokanno/previm', { 'for': ['markdown', 'mkd'] }
 Plug 'tyru/open-browser.vim', { 'for': ['markdown', 'mkd'] }
+Plug 'preservim/vim-markdown'
 Plug 'hashivim/vim-terraform', { 'for': 'tf' }
 
 " Lint
