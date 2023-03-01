@@ -11,10 +11,6 @@ if [ ! -f ${HOME}/.config/starship.toml ]; then
   ln -sfv ${BASE}/.config/starship.toml ${HOME}/.config/starship.toml
 fi
 
-if [ ! -d ${HOME}/.tmux/bin ]; then
-  ln -sfv ${BASE}/.tmux/bin ${HOME}/.tmux
-fi
-
 if [ ! -d ${HOME}/.vim/_config ]; then
   ln -sfv ${BASE}/vim/_config ${HOME}/.vim/_config
 fi
@@ -26,4 +22,8 @@ fi
 
 if [ ! -d ${XDG_CONFIG_HOME}/git ]; then
   ln -sfv ${BASE}/.config/git ${XDG_CONFIG_HOME}/git
+fi
+
+if [ ! -d ${XDG_CONFIG_HOME}/tmux ]; then
+  ln -sfv ${BASE}/.config/tmux ${XDG_CONFIG_HOME}/tmux
 fi
