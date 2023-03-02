@@ -2,8 +2,8 @@
 # General
 # --------------------------------------------------------------------
 # Auto complie
-if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
-    zcompile ~/.zshrc
+if [ $ZDOTDIR/.zshrc -nt $ZDOTDIR/.zshrc.zwc ]; then
+    zcompile $ZDOTDIR/.zshrc
 fi
 
 for f (~/dev/src/github.com/suy0n9/dotfiles/zsh/*.zsh) source "${f}"
@@ -24,14 +24,17 @@ fi
 # --------------------------------------------------------------------
 # Completion
 # --------------------------------------------------------------------
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+
 FPATH=$BREW_PREFIX/share/zsh/site-functions:$FPATH
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit
-if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-    compinit
-else
-    compinit -C
-fi
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+#if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+#    compinit
+#else
+#    compinit -C
+#fi
 
 # menu select
 zstyle ':completion:*:default' menu select=1
@@ -50,9 +53,7 @@ zstyle :prompt:pure:path color cyan
 # --------------------------------------------------------------------
 typeset -U path fpath manpath
 
-export LANG=en_US.UTF-8
 export EDITOR=vim
-export XDG_CONFIG_HOME="$HOME/.config"
 
 # Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
@@ -64,7 +65,7 @@ path=(
     $BREW_PREFIX/opt/gnu-sed/libexec/gnubin(N-/) # sed
     $BREW_PREFIX/opt/gnu-tar/libexec/gnubin(N-/) # tar
     $BREW_PREFIX/opt/grep/libexec/gnubin(N-/) # grep
-    $HOME/.local/bin(N-/) # poetry
+    $HOME/.local/bin(N-/)
     $HOME/go/bin(N-/) # go
     $path
 )
@@ -84,7 +85,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # --------------------------------------------------------------------
 # History
 # --------------------------------------------------------------------
-export HISTFILE=$HOME/.zsh_history
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export HISTSIZE=100000
 export SAVEHIST=100000
 

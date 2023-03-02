@@ -37,8 +37,8 @@ alias -g P='$(kubectl get po | fzf | awk "{print \$1}")'
 
 alias lg='lazygit'
 
-alias sss='source ~/.zshrc'
-alias vz='vim ~/.zshrc'
+alias sss='source $ZDOTDIR/.zshrc'
+alias vz='vim $ZDOTDIR/.zshrc'
 alias vv='vim ~/.vimrc'
 
 # http status
