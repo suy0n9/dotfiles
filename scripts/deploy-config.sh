@@ -41,3 +41,7 @@ fi
 if [ ! -d "${XDG_CONFIG_HOME}/tmux" ]; then
   ln -sfv "${REPO_CONFIG}/tmux" "${XDG_CONFIG_HOME}/tmux"
 fi
+
+if [ ! -d "${XDG_CONFIG_HOME}/asdf" ]; then
+  ln -sfv "${REPO_CONFIG}/asdf" "${XDG_CONFIG_HOME}/asdf"
+fi

@@ -1,22 +1,20 @@
 #!/bin/bash
 
 plugins=(
-  'golang'
-  'java'
-  'nodejs'
   'python'
+  'nodejs'
   'terraform'
 )
 
-for plugin in ${plugins[@]}
+for plugin in "${plugins[@]}"
 do
-  asdf plugin add ${plugin}
+  asdf plugin add "${plugin}"
   if [ $? -eq 2 ]; then
     continue
   fi
 
-  asdf install ${plugin} latest
-  asdf global ${plugin} latest
+  asdf install "${plugin}" latest
+  asdf global "${plugin}" latest
 done
 
 echo "$(tput setaf 2)Install asdf plugins complete. ✔︎$(tput sgr0)"

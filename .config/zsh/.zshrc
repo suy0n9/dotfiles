@@ -157,6 +157,8 @@ eval "$(zoxide init zsh)"
 
 # asdf
 . $BREW_PREFIX/opt/asdf/libexec/asdf.sh
+export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
+export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/asdfrc"
 
 # terraform
 complete -o nospace -C $HOME/.asdf/installs/terraform/1.2.2/bin/terraform terraform
