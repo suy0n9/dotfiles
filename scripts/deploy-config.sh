@@ -25,6 +25,10 @@ if [ ! -f "${XDG_CONFIG_HOME}/starship.toml" ]; then
   ln -sfv "${REPO_CONFIG}/starship.toml" "${XDG_CONFIG_HOME}/starship.toml"
 fi
 
+if [ ! -f "${HOME}/.vim/vimrc" ]; then
+  ln -sfv "${BASE}/vim/vimrc" "${HOME}/.vim/vimrc"
+fi
+
 if [ ! -d "${HOME}/.vim/_config" ]; then
   ln -sfv "${BASE}/vim/_config" "${HOME}/.vim/_config"
 fi

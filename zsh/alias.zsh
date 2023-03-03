@@ -39,7 +39,7 @@ alias lg='lazygit'
 
 alias sss='source $ZDOTDIR/.zshrc'
 alias vz='vim $ZDOTDIR/.zshrc'
-alias vv='vim ~/.vimrc'
+alias vv='vim ~/.vim/vimrc'
 
 # http status
 alias "100"="echo 'Continue'"
