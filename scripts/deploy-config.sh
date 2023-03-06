@@ -49,3 +49,8 @@ fi
 if [ ! -d "${XDG_CONFIG_HOME}/asdf" ]; then
   ln -sfv "${REPO_CONFIG}/asdf" "${XDG_CONFIG_HOME}/asdf"
 fi
+
+if [ ! -f "${XDG_CONFIG_HOME}/pypoetry/config.toml" ]; then
+  mkdir -p "${XDG_CONFIG_HOME}/pypoetry"
+  ln -sfv "${REPO_CONFIG}/pypoetry/config.toml" "${XDG_CONFIG_HOME}/pypoetry/config.toml"
+fi
