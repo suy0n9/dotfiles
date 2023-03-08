@@ -16,6 +16,10 @@ if [ ! -f "${XDG_CONFIG_HOME}/zsh/.zshrc" ]; then
   ln -sfv "${REPO_CONFIG}/zsh/.zshrc" "${XDG_CONFIG_HOME}/zsh/.zshrc"
 fi
 
+if [ ! -d "${XDG_CONFIG_HOME}/zsh/_zsh" ]; then
+  ln -sfv "${BASE}/zsh/" "${XDG_CONFIG_HOME}/zsh/_zsh"
+fi
+
 if [ ! -f "${XDG_CONFIG_HOME}/peco/config.json" ]; then
   mkdir -p "${XDG_CONFIG_HOME}/peco"
   ln -sfv "${REPO_CONFIG}/peco/config.json" "${XDG_CONFIG_HOME}/peco/config.json"

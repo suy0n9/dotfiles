@@ -6,7 +6,7 @@ if [ $ZDOTDIR/.zshrc -nt $ZDOTDIR/.zshrc.zwc ]; then
     zcompile $ZDOTDIR/.zshrc
 fi
 
-for f (~/dev/src/github.com/suy0n9/dotfiles/zsh/*.zsh) source "${f}"
+for f ($ZDOTDIR/_zsh/*.zsh) source "${f}"
 
 # local config
 if [[ -f ~/.zshrc.local ]]; then
