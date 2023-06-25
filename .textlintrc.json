@@ -8,7 +8,8 @@
             "ja-no-mixed-period": {
                 "allowPeriodMarks": ["．", "."]
             },
-            "no-exclamation-question-mark": false
+            "no-exclamation-question-mark": false,
+            "max-kanji-continuous-len": false
         },
         "textlint-rule-spellcheck-tech-word": true
     }
