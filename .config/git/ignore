@@ -4,6 +4,9 @@
 # Vim
 [._]*.sw[a-p]
 
+# vscode
+.vscode
+
 # direnv
 .envrc
 
