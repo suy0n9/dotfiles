@@ -3,12 +3,14 @@
         "preset-ja-technical-writing": {
             "ja-no-abusage": true,
             "sentence-length": {
-                max: 140
+                "max": 140
             },
             "ja-no-mixed-period": {
                 "allowPeriodMarks": ["．", "."]
             },
-            "no-exclamation-question-mark": false
+            "no-exclamation-question-mark": false,
+            "max-kanji-continuous-len": false,
+            "ja-no-weak-phrase": false
         },
         "textlint-rule-spellcheck-tech-word": true
     }
