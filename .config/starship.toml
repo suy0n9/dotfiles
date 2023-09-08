@@ -25,10 +25,10 @@ style = "gray"
 format = "via [$symbol$version $workspace]($style) "
 
 [package]
-symbol = " "
+symbol = "󰏗 "
 
 [python]
-symbol = " "
+symbol = "󰌠 "
 
 [golang]
 symbol = " "
@@ -43,4 +43,4 @@ symbol = " "
 symbol = " "
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
