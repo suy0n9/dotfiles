@@ -65,6 +65,7 @@ path=(
     $BREW_PREFIX/opt/gnu-sed/libexec/gnubin(N-/) # sed
     $BREW_PREFIX/opt/gnu-tar/libexec/gnubin(N-/) # tar
     $BREW_PREFIX/opt/grep/libexec/gnubin(N-/) # grep
+    $BREW_PREFIX/bin(N-/)
     $HOME/.local/bin(N-/)
     $POETRY_HOME/bin(N-/) #poetry
     $HOME/go/bin(N-/) # go
