@@ -12,10 +12,10 @@ alias gore='gore -autoimport'
 alias src='cd $(ghq root)'
 
 # ls
-if [[ -x `which exa` ]]; then
-    alias ls='exa --icons'
-    alias ll='exa -l --icons'
-    alias la='exa -la --icons'
+if [[ -x `which eza` ]]; then
+    alias ls='eza --icons'
+    alias ll='eza -l --icons'
+    alias la='eza -la --icons'
 else
     alias ls='ls -GF'
     alias ll='ls -l'
