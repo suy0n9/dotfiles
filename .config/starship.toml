@@ -22,6 +22,7 @@ format = "[$symbol$branch(:$remote_branch)]($style) "
 style = "gray"
 
 [terraform]
+symbol = "󱁢 "
 format = "via [$symbol$version $workspace]($style) "
 
 [package]
