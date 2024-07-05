@@ -43,5 +43,10 @@ symbol = " "
 [docker_context]
 symbol = " "
 
+[kubernetes]
+format = 'on [⛵ $context \($namespace\)]($style) '
+style = "bold green"
+disabled = false
+
 [memory_usage]
 symbol = "󰍛 "
