@@ -13,6 +13,6 @@ if [ ! -f "${HOME}/.vim/colors/Tomorrow-Night-Bright.vim" ]; then
 fi
 # Tmux Plugin Manager
 if [ ! -d "$XDG_DATA_HOME/tmux/plugins/tpm" ]; then
-  git clone https://github.com/tmux-plugins/tpm $XDG_DATA_HOME/tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm "$XDG_DATA_HOME"/tmux/plugins/tpm
 fi
 

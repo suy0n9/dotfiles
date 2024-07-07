@@ -6,7 +6,9 @@ if [ $ZDOTDIR/.zshrc -nt $ZDOTDIR/.zshrc.zwc ]; then
     zcompile $ZDOTDIR/.zshrc
 fi
 
-for f ($ZDOTDIR/_zsh/*.zsh) source "${f}"
+for f in $ZDOTDIR/_zsh/*.zsh; do
+    source "$f"
+done
 
 # local config
 if [[ -f ~/.zshrc.local ]]; then
@@ -102,11 +104,12 @@ zshaddhistory() {
     local line=${1%%$'\n'}
     local cmd=${line%% *}
 
-    [[ ${#line} -ge 5
-        && ${cmd} != (l[sal])
-        && ${cmd} != (cd)
-        && ${cmd} != (man)
-    ]]
+    [[ ${#line} -ge 5 \
+        && ${cmd} != "ls" \
+        && ${cmd} != "la" \
+        && ${cmd} != "ll" \
+        && ${cmd} != "cd" \
+        && ${cmd} != "man" ]]
 }
 
 # --------------------------------------------------------------------
