@@ -161,7 +161,7 @@ eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
 
 # chezmoi
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 # Use zprof
 if (which zprof > /dev/null 2>&1) ;then
