@@ -67,6 +67,7 @@ path=(
     $HOME/.local/bin(N-/)
     $POETRY_HOME/bin(N-/) #poetry
     $HOME/go/bin(N-/) # go
+    $XDG_CONFIG_HOME/scripts/bin(N-/)
     $path
 )
 
@@ -127,6 +128,7 @@ bindkey -e
 
 bindkey '^]' fzf-ghq
 bindkey '^r' fzf-select-history
+bindkey "^G" widget::ghq::session
 
 # --------------------------------------------------------------------
 # Plugin
