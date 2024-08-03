@@ -18,9 +18,8 @@ github = "romkatv/zsh-defer"
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 
-[plugins.zshrc-source]
-local = '~/.config/zsh/_zsh'
-use = ['*.zsh']
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
 apply = ['source']
 
 [plugins.zsh-autosuggestions]
@@ -34,3 +33,8 @@ apply = ['defer']
 [plugins.fast-syntax-highlighting]
 github = "zdharma-continuum/fast-syntax-highlighting"
 apply = ['defer']
+
+[plugins.zshrc-source]
+local = '~/.config/zsh/_zsh'
+use = ['*.zsh']
+apply = ['source']
