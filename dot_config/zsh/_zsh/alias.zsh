@@ -1,5 +1,5 @@
 # diff
-if [[ -x `which colordiff` ]]; then
+if [[ -x $(which colordiff) ]]; then
     alias diff='colordiff -u'
 else
     alias diff='diff -u'
@@ -12,7 +12,7 @@ alias gore='gore -autoimport'
 alias src='cd $(ghq root)'
 
 # ls
-if [[ -x `which eza` ]]; then
+if [[ -x $(which eza) ]]; then
     alias ls='eza --icons'
     alias ll='eza -l --icons'
     alias la='eza -la --icons'
