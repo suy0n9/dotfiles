@@ -38,3 +38,17 @@ apply = ['defer']
 local = '~/.config/zsh/_zsh'
 use = ['*.zsh']
 apply = ['source']
+
+[plugins.zsh-replace-multiple-dots]
+github = "momo-lab/zsh-replace-multiple-dots"
+hooks.post = """
+replace_multiple_dots_exclude_go() {
+    if [[ "$LBUFFER" =~ '^go ' ]]; then
+        zle self-insert
+    else
+        zle .replace_multiple_dots
+    fi
+}
+zle -N .replace_multiple_dots replace_multiple_dots
+zle -N replace_multiple_dots replace_multiple_dots_exclude_go
+"""

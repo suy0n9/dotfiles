@@ -1,5 +1,5 @@
 # aws-current - print current aws profile
-aws-current () {
+aws-current() {
     echo "${AWS_PROFILE}"
 }
 
@@ -10,7 +10,6 @@ ls-commit() {
 
 # git worktree add command
 gwkt() {
-    GIT_CDUP_DIR=`git rev-parse --show-cdup`
+    GIT_CDUP_DIR=$(git rev-parse --show-cdup)
     git worktree add ${GIT_CDUP_DIR}git-worktrees/$1 -b $1
 }
-
