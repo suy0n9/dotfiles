@@ -1,0 +1,61 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Print the current date
+  - trigger: ";td"
+    replace: "{{yyyy/mm/dd}}"
+    vars:
+      - name: yyyy/mm/dd
+        type: date
+        params:
+          format: "%Y/%m/%d"
+  - trigger: ";td"
+    replace: "{{yyyymmdd}}"
+    vars:
+      - name: yyyymmdd
+        type: date
+        params:
+          format: "%Y%m%d"
+  - trigger: ";td"
+    replace: "{{yyyy-mm-dd}}"
+    vars:
+      - name: yyyy-mm-dd
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Print the past date
+  - trigger: ";yd"
+    replace: "{{yyyy/mm/dd}}"
+    vars:
+      - name: yyyy/mm/dd
+        type: date
+        params:
+          format: "%Y/%m/%d"
+          offset: -86400
+  - trigger: ";yd"
+    replace: "{{yyyymmdd}}"
+    vars:
+      - name: yyyymmdd
+        type: date
+        params:
+          format: "%Y%m%d"
+          offset: -86400
+  - trigger: ";yd"
+    replace: "{{yyyy-mm-dd}}"
+    vars:
+      - name: yyyy-mm-dd
+        type: date
+        params:
+          format: "%Y-%m-%d"
+          offset: -86400
+
+  - triggers: [";espanso ", ";esp "] # edit espanso config
+    replace: "code ~/Library/Application\\ Support/espanso/"

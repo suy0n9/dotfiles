@@ -1,0 +1,6 @@
+matches:
+  - trigger: ";id"
+    replace: "suy0n9"
+
+  - trigger: ";mail"
+    replace: "suy01v9@gmail.com"
