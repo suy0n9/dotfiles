@@ -13,9 +13,9 @@ alias src='cd $(ghq root)'
 
 # ls
 if [[ -x $(which eza) ]]; then
-    alias ls='eza --icons'
-    alias ll='eza -l --icons'
-    alias la='eza -la --icons'
+    alias ls='eza --icons=always'
+    alias ll='eza -l --icons=always'
+    alias la='eza -la --icons=always'
 else
     alias ls='ls -GF'
     alias ll='ls -l'
