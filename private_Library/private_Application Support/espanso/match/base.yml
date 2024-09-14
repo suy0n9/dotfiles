@@ -10,3 +10,40 @@
 matches:
   - triggers: [";espanso ", ";esp "] # edit espanso config
     replace: "code ~/Library/Application\\ Support/espanso/"
+
+  - trigger: ";/today"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y/%m/%d"
+    description: "Insert today’s date in yyyy/mm/dd format"
+
+  - trigger: ";-today"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+    description: "Insert today’s date in yyyy-mm-dd format"
+
+  - trigger: ";.today"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y.%m.%d"
+    description: "Insert today’s date in yyyy.mm.dd format"
+
+  - trigger: ";today"
+    replace: "{{mydate}}"
+    before: true
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y%m%d"
+    description: "Insert today’s date in yyyymmdd format"
