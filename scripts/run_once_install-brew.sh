@@ -9,7 +9,7 @@ else
     echo '[INFO] ************ Homebrew is already exist'
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 echo '[INFO] ************ Installing with brew bundle'
 brew bundle --file="$HOME/.Brewfile"
