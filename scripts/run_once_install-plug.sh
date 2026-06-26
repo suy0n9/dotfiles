@@ -16,3 +16,8 @@ if [ ! -d "$XDG_DATA_HOME/tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm "$XDG_DATA_HOME"/tmux/plugins/tpm
 fi
 
+# fzf shell integration
+if [ ! -f "${HOME}/.fzf.zsh" ]; then
+  /opt/homebrew/opt/fzf/install --all --no-bash --no-fish
+fi
+

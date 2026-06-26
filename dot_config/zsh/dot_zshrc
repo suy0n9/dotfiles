@@ -14,11 +14,7 @@ fi
 # enable fuzzy auto-completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [[ "$(uname -m)" == arm64 ]]; then
-    BREW_PREFIX=/opt/homebrew
-elif [[ "$(uname -m)" == x86_64 ]]; then
-    BREW_PREFIX=/usr/local
-fi
+BREW_PREFIX=/opt/homebrew
 # --------------------------------------------------------------------
 # Completion
 # --------------------------------------------------------------------
