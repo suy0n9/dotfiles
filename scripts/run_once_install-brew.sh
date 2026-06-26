@@ -10,5 +10,5 @@ fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo '[INFO] ************ Installing with brew bundle'
-brew bundle --file="$HOME/.Brewfile"
+brew bundle --file="$HOME/.Brewfile" || echo '[WARN] Some packages failed to install'
 brew cleanup
