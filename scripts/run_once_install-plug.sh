@@ -1,5 +1,7 @@
 #!/bin/bash
 
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+
 # vim-plug
 if [ ! -f "${HOME}/.vim/autoload/plug.vim" ]; then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -11,13 +13,14 @@ if [ ! -f "${HOME}/.vim/colors/Tomorrow-Night-Bright.vim" ]; then
   curl -fLo ~/.vim/colors/Tomorrow-Night-Bright.vim --create-dirs \
     https://raw.githubusercontent.com/chriskempson/vim-tomorrow-theme/master/colors/Tomorrow-Night-Bright.vim
 fi
+
 # Tmux Plugin Manager
 if [ ! -d "$XDG_DATA_HOME/tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm "$XDG_DATA_HOME"/tmux/plugins/tpm
 fi
 
 # fzf shell integration
-if [ ! -f "${HOME}/.fzf.zsh" ]; then
+if [ ! -f "${HOME}/.fzf.zsh" ] && [ -f "/opt/homebrew/opt/fzf/install" ]; then
   /opt/homebrew/opt/fzf/install --all --no-bash --no-fish
 fi
 
