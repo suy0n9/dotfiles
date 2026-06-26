@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# set -eu
+set -eu
 
-if ! (type brew >/dev/null 2>&1); then
+if ! command -v brew &>/dev/null; then
     echo '[INFO] ************ Installing Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-    echo '[INFO] ************ Homebrew is already exist'
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo '[INFO] ************ Installing with brew bundle'
 brew bundle --file="$HOME/.Brewfile"
